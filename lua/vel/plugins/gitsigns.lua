@@ -1,7 +1,7 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	config = {
+	opts = {
 		signs = {
 			add = { text = "▎" },
 			change = { text = "▎" },
@@ -10,6 +10,7 @@ return {
 			changedelete = { text = "▎" },
 			untracked = { text = "▎" },
 		},
+		current_line_blame = true,
 		on_attach = function(buffer)
 			local gs = package.loaded.gitsigns
 
