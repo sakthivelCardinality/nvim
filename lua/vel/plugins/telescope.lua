@@ -12,6 +12,7 @@ return {
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
 		{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols Files" },
+		{ "<leader>fS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find symbols Workspace" },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
 		-- git
 		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
