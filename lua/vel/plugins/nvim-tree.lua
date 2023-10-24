@@ -25,13 +25,13 @@ return {
 				update_root = false,
 			},
 			view = {
-				adaptive_size = false,
+				adaptive_size = true,
 				side = "right",
 				width = 40,
 				preserve_window_proportions = true,
 			},
 			git = {
-				enable = false,
+				enable = true,
 				ignore = true,
 			},
 			filesystem_watchers = {
@@ -43,8 +43,8 @@ return {
 				},
 			},
 			renderer = {
-				root_folder_label = false,
-				highlight_git = false,
+				root_folder_label = true,
+				highlight_git = true,
 				highlight_opened_files = "none",
 
 				indent_markers = {
@@ -56,7 +56,7 @@ return {
 						file = true,
 						folder = true,
 						folder_arrow = true,
-						git = false,
+						git = true,
 					},
 
 					glyphs = {
