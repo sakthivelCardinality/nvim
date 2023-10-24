@@ -12,12 +12,28 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "vel.plugins" }, { import = "vel.plugins.lsp" } }, {
+	-- defaults = {
+	-- 	lazy = true,
+	-- },
 	install = {
 		colorscheme = { "dracula" },
 	},
 	checker = {
 		enabled = true,
 		notify = false,
+	},
+	rtp = {
+		disabled_plugins = {
+			"gzip",
+			"matchit",
+			"matchparen",
+			"netrw",
+			"netrwPlugin",
+			"tarPlugin",
+			"tohtml",
+			"tutor",
+			"zipPlugin",
+		},
 	},
 	change_detection = {
 		notify = false,
