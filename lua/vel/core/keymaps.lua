@@ -60,8 +60,8 @@ keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 -- windows
 keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
 keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
-keymap.set("n", "<leader>wv", "<C-W>s", { desc = "Split window below", remap = true })
-keymap.set("n", "<leader>wh", "<C-W>v", { desc = "Split window right", remap = true })
+keymap.set("n", "<leader>wh", "<C-W>s", { desc = "Split window below", remap = true })
+keymap.set("n", "<leader>wv", "<C-W>v", { desc = "Split window right", remap = true })
 keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
 keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 
