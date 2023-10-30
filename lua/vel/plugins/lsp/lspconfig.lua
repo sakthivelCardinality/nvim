@@ -5,7 +5,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
-		{ "simrat39/rust-tools.nvim", opts = {} },
 	},
 	config = function()
 		-- import lspconfig plugin

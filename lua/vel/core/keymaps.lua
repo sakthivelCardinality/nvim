@@ -7,8 +7,8 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jj", "<Esc>", { desc = "Escape insert mode" })
 keymap.set("i", "jk", "<Esc>", { desc = "Escape insert mode" })
 
-keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- Inprove pasting
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
