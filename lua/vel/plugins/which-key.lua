@@ -21,6 +21,7 @@ return {
 			["<leader>s"] = { name = "+Search" },
 			["<leader>w"] = { name = "+Window" },
 			["<leader>x"] = { name = "+Diagnostics/Quickfix" },
+			["<leader>t"] = { name = "+Terminal" },
 		})
 	end,
 }

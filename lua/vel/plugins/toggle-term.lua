@@ -59,11 +59,24 @@ return {
 			lazygit:toggle()
 		end
 
-		vim.api.nvim_set_keymap(
+		local keymap = vim.keymap -- for conciseness
+
+		keymap.set(
 			"n",
 			"<leader>gg",
 			"<cmd>lua _lazygit_toggle()<CR>",
 			{ noremap = true, silent = true, desc = "Lazygit" }
 		)
+
+		keymap.set(
+			"n",
+			"<leader>th",
+			"<cmd>ToggleTerm size=10 direction=horizontal<cr>",
+			{ desc = "Terminal Horizontal" }
+		)
+
+		keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=60 direction=vertical<cr>", { desc = "Terminal Vertical" })
+		keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal Float" })
+		keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Terminal Tab" })
 	end,
 }

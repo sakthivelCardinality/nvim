@@ -14,9 +14,11 @@ return {
 		{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols Files" },
 		{ "<leader>fS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find symbols Workspace" },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+		{ "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "[/] Fuzzily search in current buffer" },
 		-- git
 		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
 		{ "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
+		{ "<leader>gf", "<cmd>Telescope git_files<CR>", desc = "files" },
 		-- search
 		{ '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
 		{ "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
