@@ -27,8 +27,9 @@ return {
 			view = {
 				adaptive_size = false,
 				side = "right",
-				relativenumber = false,
+				relativenumber = true,
 				width = 40,
+				signcolumn = "yes",
 			},
 			git = {
 				enable = true,
