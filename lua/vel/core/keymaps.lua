@@ -14,7 +14,15 @@ keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent
 keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Inprove pasting
-keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
+-- keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
+-- keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+-- keymap.set("n", "<leader>Y", [["+Y]])
+
+-- scroll at the center of screen
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
