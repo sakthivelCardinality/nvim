@@ -35,28 +35,34 @@ opt.splitright = true -- Put new windows right of current
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
 opt.timeoutlen = 300
-opt.undofile = true
-opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.updatetime = 100 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = true -- Disable line wrap
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
-	-- fold = "⸱",
 	fold = " ",
 	foldsep = " ",
 	diff = "╱",
 	eob = " ",
 }
+opt.wrap = true -- Disable line wrap
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 opt.listchars:append("space:⋅")
 opt.listchars:append("eol:↴")
-opt.swapfile = false
 opt.background = "dark"
+
+-- regards backup
+opt.swapfile = false
+opt.backup = false
+opt.undofile = true
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undolevels = 10000
+
+-- search
+opt.hlsearch = false
+opt.incsearch = true
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

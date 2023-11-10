@@ -13,16 +13,21 @@ keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, sil
 keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- insert mode move between beginningand end of line
+keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
+keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
+
 -- Inprove pasting
--- keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
--- keymap.set({ "n", "v" }, "<leader>y", [["+y]])
--- keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
+-- keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy the content to system clipboard" })
+-- keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy the content to system clipboard" })
 
 -- scroll at the center of screen
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down half page center page" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up half page center page" })
+keymap.set("n", "n", "nzzzv", { desc = "Search word with half page" })
+keymap.set("n", "N", "Nzzzv", { desc = "Search word with half page" })
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
