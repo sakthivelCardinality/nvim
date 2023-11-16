@@ -98,28 +98,6 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure typescript server with plugin
-
-		local function organize_imports()
-			local params = {
-				command = "_typescript.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-				title = "",
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-
-		lspconfig["tsserver"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
-		})
-
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
@@ -130,23 +108,6 @@ return {
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		})
-
-		-- configure svelte server
-		lspconfig["svelte"].setup({
-			capabilities = capabilities,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-
-				vim.api.nvim_create_autocmd("BufWritePost", {
-					pattern = { "*.js", "*.ts" },
-					callback = function(ctx)
-						if client.name == "svelte" then
-							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-						end
-					end,
-				})
-			end,
 		})
 
 		-- configure prisma orm server
@@ -191,6 +152,44 @@ return {
 		lspconfig["sqlls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+		})
+
+		-- configure svelte server
+		lspconfig["svelte"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+
+				vim.api.nvim_create_autocmd("BufWritePost", {
+					pattern = { "*.js", "*.ts" },
+					callback = function(ctx)
+						if client.name == "svelte" then
+							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+						end
+					end,
+				})
+			end,
+		})
+
+		-- configure typescript server with plugin
+		local function organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+				title = "",
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+
+		lspconfig["tsserver"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
 		})
 
 		-- configure lua server (with special settings)
