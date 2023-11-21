@@ -22,6 +22,8 @@ return {
 			["<leader>w"] = { name = "+Window" },
 			["<leader>x"] = { name = "+Diagnostics/Quickfix" },
 			["<leader>t"] = { name = "+Terminal" },
+			["<leader><tab>"] = { name = "+Tab" },
+			["gs"] = { name = "+Mini Surround" },
 		})
 	end,
 }
