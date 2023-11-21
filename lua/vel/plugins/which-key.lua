@@ -23,7 +23,6 @@ return {
 			["<leader>x"] = { name = "+Diagnostics/Quickfix" },
 			["<leader>t"] = { name = "+Terminal" },
 			["<leader><tab>"] = { name = "+Tab" },
-			["gs"] = { name = "+Mini Surround" },
 		})
 	end,
 }

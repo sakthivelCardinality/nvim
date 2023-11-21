@@ -1,6 +1,5 @@
 return {
 	"mfussenegger/nvim-lint",
-	lazy = true,
 	event = { "BufReadPre", "BufNewFile", "BufWritePost", "BufReadPost", "InsertLeave" }, -- to disable, comment this out
 	config = function()
 		local lint = require("lint")
