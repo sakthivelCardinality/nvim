@@ -46,8 +46,10 @@ return {
 			require("dracula").setup(opts)
 			vim.cmd.colorscheme("dracula")
 
-			-- Transparent telescope background
+			-- change highlights to differnt colors
 			vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "LineNr", { fg = "#8400ff" })
+			vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#fff000" })
 		end,
 	},
 }
