@@ -43,11 +43,6 @@ return {
 
 				-- Text Object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
-
-				local wk = require("which-key")
-				wk.register({
-					["<leader>h"] = { name = "+Git Hunk" },
-				})
 			end,
 		},
 	},

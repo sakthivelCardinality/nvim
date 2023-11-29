@@ -55,9 +55,10 @@ opt.background = "dark"
 
 -- regards backup
 opt.swapfile = false
-opt.backup = false
+opt.backup = true
+opt.backupdir = os.getenv("HOME") .. "/.vim/backup/"
 opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir/"
 opt.undolevels = 10000
 
 -- search
