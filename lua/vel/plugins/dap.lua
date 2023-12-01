@@ -80,8 +80,8 @@ return {
 				"mxsdev/nvim-dap-vscode-js",
 				dependencies = {
 					"microsoft/vscode-js-debug",
-					version = "1.x",
-					build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+					version = "*",
+					run = "npm install --legacy-peer-deps --no-save && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
 				},
 				opts = {
 					debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
