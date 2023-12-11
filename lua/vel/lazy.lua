@@ -16,9 +16,6 @@ require("lazy").setup({ { import = "vel.plugins" }, { import = "vel.plugins.lsp"
 		lazy = false,
 		version = false,
 	},
-	install = {
-		colorscheme = { "dracula" },
-	},
 	checker = {
 		enabled = true,
 		notify = false,

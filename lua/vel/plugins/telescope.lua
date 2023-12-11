@@ -1,8 +1,17 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
-	branch = "0.1.x",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			event = "VeryLazy",
+			build = "make",
+			config = function()
+				require("telescope").load_extension("fzf")
+			end,
+		},
+	},
 	keys = {
 		{ "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
 		{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },

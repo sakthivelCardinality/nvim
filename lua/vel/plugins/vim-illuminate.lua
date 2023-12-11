@@ -1,8 +1,15 @@
 return {
 	"RRethy/vim-illuminate",
 	event = "VeryLazy",
-	config = function()
-		require("illuminate").configure({})
+	opts = {
+		delay = 200,
+		large_file_cutoff = 2000,
+		large_file_overrides = {
+			providers = { "lsp" },
+		},
+	},
+	config = function(_, opts)
+		require("illuminate").configure(opts)
 
 		-- change the highlight style
 		vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
