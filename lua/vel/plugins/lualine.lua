@@ -6,8 +6,7 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
-		-- configure lualine with modified theme
-		lualine.setup({
+		local config = {
 			options = {
 				theme = "auto",
 				globalstatus = true,
@@ -38,6 +37,8 @@ return {
 					end,
 				},
 			},
-		})
+		}
+
+		lualine.setup(config)
 	end,
 }
