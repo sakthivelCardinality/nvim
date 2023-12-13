@@ -11,6 +11,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
 			-- Adds a number of user-friendly snippets
 			"rafamadriz/friendly-snippets",
 
@@ -59,6 +60,7 @@ return {
 					{ name = "luasnip" }, -- snippets
 					{ name = "buffer" }, -- text within current buffer
 					{ name = "path" }, -- file system paths
+					{ name = "nvim_lsp_signature_help" },
 				}),
 				-- configure lspkind for vs-code like pictograms in completion menu
 				formatting = {

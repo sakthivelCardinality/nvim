@@ -35,6 +35,21 @@ return {
 			options = {
 				transparency = true,
 			},
+			styles = {
+				types = "NONE",
+				methods = "italic",
+				numbers = "NONE",
+				strings = "NONE",
+				comments = "italic",
+				keywords = "bold,italic",
+				constants = "NONE",
+				functions = "italic",
+				operators = "NONE",
+				variables = "NONE",
+				parameters = "NONE",
+				conditionals = "italic",
+				virtual_text = "NONE",
+			},
 			highlights = {
 				CursorLine = { bg = "none" },
 				CursorLineNr = { fg = "#fff000", bold = true },
