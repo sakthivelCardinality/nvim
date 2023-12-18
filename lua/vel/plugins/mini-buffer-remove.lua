@@ -1,6 +1,6 @@
 return {
 	"echasnovski/mini.bufremove",
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{
 			"<leader>bd",
