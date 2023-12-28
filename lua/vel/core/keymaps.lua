@@ -128,3 +128,10 @@ keymap.set("i", "<C-h>", "<Left>", { desc = "Move Cursor Left Insert Mode" })
 keymap.set("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
 keymap.set("i", "<C-j>", "<Down>", { desc = "Move Cursor Down Insert Mode" })
 keymap.set("i", "<C-k>", "<Up>", { desc = "Move Cursor Up Insert Mode" })
+
+-- Quicker macro playback
+keymap.set("n", "Q", "@qj", { desc = "Macro for single line" })
+keymap.set("x", "Q", ":norm @q<CR>", { desc = " Macro for selecting multiple lines" })
+
+-- Open line, but stay in normal mode
+keymap.set("n", "<Leader><CR>", "o<Esc>", { desc = "Add blank line below in normal mode" })
