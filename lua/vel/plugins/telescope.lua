@@ -17,6 +17,7 @@ return {
 			{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols Files" },
 			{ "<leader>fS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find symbols Workspace" },
 			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+			{ "<leader>fg", "<cmd>Telescope grep_string<cr>", desc = "Grep String" },
 			-- git
 			{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
 			{ "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
@@ -51,6 +52,12 @@ return {
 					i = {
 						["<esc>"] = function(...)
 							require("telescope.actions").close(...)
+						end,
+						["<C-k>"] = function(...)
+							require("telescope.actions").move_selection_previous(...) -- move to prev result
+						end,
+						["<C-j>"] = function(...)
+							require("telescope.actions").move_selection_next(...) -- move to next result
 						end,
 					},
 				},
