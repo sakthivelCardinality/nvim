@@ -1,7 +1,7 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
-	event = "VeryLazy",
-	-- event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
+	enabled = false, -- set this value to true to enable this plugin
+	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	config = function()
 		local null_ls = require("null-ls")
 

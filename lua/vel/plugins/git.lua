@@ -38,8 +38,8 @@ return {
 				end, "Diff This ~")
 
 				-- Toggle Git Ui
-				map("n", "<leader>ub", gs.toggle_current_line_blame, "Toggle Git Line Blame")
-				map("n", "<leader>ud", gs.toggle_deleted, "Toggle Git Delete")
+				map("n", "<leader>gb", gs.toggle_current_line_blame, "Toggle Git Line Blame")
+				map("n", "<leader>gd", gs.toggle_deleted, "Toggle Git Delete")
 
 				-- Text Object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
