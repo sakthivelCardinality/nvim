@@ -24,7 +24,4 @@ return {
 			},
 		},
 	},
-	config = function(_, opts)
-		require("ibl").setup(opts)
-	end,
 }

@@ -5,12 +5,12 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			signs = {
-				add = { text = "▎" },
-				change = { text = "▎" },
-				delete = { text = "" },
-				topdelete = { text = "" },
-				changedelete = { text = "▎" },
-				untracked = { text = "▎" },
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
 			},
 			on_attach = function(buffer)
 				local gs = package.loaded.gitsigns
@@ -22,10 +22,19 @@ return {
 				-- Action
 				map("n", "]h", gs.next_hunk, "Next Hunk")
 				map("n", "[h", gs.prev_hunk, "Prev Hunk")
-				map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", "GitSigns Stage Hunk")
-				map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", "GitSigns Reset Hunk")
+
+				-- visual mode
+				map("v", "<leader>hs", function()
+					gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, "stage git hunk")
+				map("v", "<leader>hr", function()
+					gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+				end, "reset git hunk")
+
+				-- normal mode
+				map("n", "<leader>hs", gs.stage_hunk, "git stage hunk")
+				map("n", "<leader>hr", gs.reset_hunk, "git reset hunk")
 				map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
-				map("n", "<leader>ha", gs.stage_hunk, "Stage Hunk")
 				map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
 				map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
 				map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
