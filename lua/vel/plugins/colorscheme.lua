@@ -33,7 +33,7 @@ return {
 		priority = 1000, -- Ensure it loads first
 		opts = {
 			options = {
-				transparency = true,
+				transparency = false,
 			},
 			styles = {
 				types = "NONE",
