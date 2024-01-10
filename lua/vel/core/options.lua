@@ -93,3 +93,6 @@ opt.fillchars = {
 	diff = "╱",
 	eob = " ",
 }
+
+-- visible in markdown files
+opt.conceallevel = 0
