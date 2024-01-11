@@ -1,1 +1,5 @@
-return { "simrat39/rust-tools.nvim", event = "VeryLazy", opts = {} }
+return {
+	"mrcjkb/rustaceanvim",
+	version = "^3", -- Recommended
+	ft = { "rust" },
+}
