@@ -4,7 +4,7 @@ vim.g.maplocalleader = "\\"
 local keymap = vim.keymap -- for conciseness
 
 -- Escape insert mode
-keymap.set("i", "jj", "<Esc>", { desc = "Escape insert mode" })
+keymap.set("i", "jj", "<Esc>", { desc = "Escape insert mode", remap = true, silent = true })
 -- keymap.set("i", "jk", "<Esc>", { desc = "Escape insert mode" })
 
 -- Remap for dealing with word wrap

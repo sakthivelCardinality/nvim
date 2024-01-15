@@ -10,7 +10,13 @@ return {
 			{ "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },
 			{ "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-			{ "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
+			{
+				"<leader><space>",
+				function()
+					require("vel.core.utils").telescope_git_or_file()
+				end,
+				desc = "Find Files (root dir)",
+			},
 			-- find
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
