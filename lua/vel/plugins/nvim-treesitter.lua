@@ -7,13 +7,7 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		opts = {
-			highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" } },
-			-- enable indentation
-			indent = { enable = true },
-			-- enable autotagging (w/ nvim-ts-autotag plugin)
-			autotag = {
-				enable = true,
-			},
+			auto_install = true,
 			-- ensure these language parsers are installed
 			ensure_installed = {
 				"json",
@@ -38,6 +32,14 @@ return {
 				"cpp",
 				"go",
 				"python",
+			},
+			-- enable highlight
+			highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" } },
+			-- enable indentation
+			indent = { enable = true },
+			-- enable autotagging (w/ nvim-ts-autotag plugin)
+			autotag = {
+				enable = true,
 			},
 			incremental_selection = {
 				enable = true,

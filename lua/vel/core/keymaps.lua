@@ -26,8 +26,9 @@ keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pas
 keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down half page center page" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up half page center page" })
-keymap.set("n", "n", "nzzzv", { desc = "Search word with half page" })
-keymap.set("n", "N", "Nzzzv", { desc = "Search word with half page" })
+-- keymap.set("n", "n", "nzzzv", { desc = "Search word with half page" })
+-- keymap.set("n", "N", "Nzzzv", { desc = "Search word with half page" })
+keymap.set("n", "*", "*zz", { desc = "Search word under cursor with half page" })
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
@@ -62,10 +63,10 @@ keymap.set(
 )
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
+keymap.set("n", "n", "'Nn'[v:searchforward].'zzzv'", { expr = true, desc = "Next search result with half page" })
 keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
+keymap.set("n", "N", "'nN'[v:searchforward].'zzzv'", { expr = true, desc = "Prev search result with half page" })
 keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
