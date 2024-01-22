@@ -25,31 +25,31 @@ return {
 				map("n", "[h", gs.prev_hunk, "Prev Hunk")
 
 				-- visual mode
-				map("v", "<leader>hs", function()
+				map("v", "<leader>ghs", function()
 					gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, "stage git hunk")
-				map("v", "<leader>hr", function()
+				end, "git stage git hunk")
+				map("v", "<leader>ghr", function()
 					gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-				end, "reset git hunk")
+				end, "git reset git hunk")
 
 				-- normal mode
-				map("n", "<leader>hs", gs.stage_hunk, "git stage hunk")
-				map("n", "<leader>hr", gs.reset_hunk, "git reset hunk")
-				map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
-				map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
-				map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
-				map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
-				map("n", "<leader>hb", function()
+				map("n", "<leader>ghs", gs.stage_hunk, "git stage hunk")
+				map("n", "<leader>ghr", gs.reset_hunk, "git reset hunk")
+				map("n", "<leader>ghS", gs.stage_buffer, "git Stage Buffer")
+				map("n", "<leader>ghu", gs.undo_stage_hunk, "git Undo Stage Hunk")
+				map("n", "<leader>ghR", gs.reset_buffer, "git Reset Buffer")
+				map("n", "<leader>ghp", gs.preview_hunk, "git Preview Hunk")
+				map("n", "<leader>ghb", function()
 					gs.blame_line({ full = true })
-				end, "Blame Line")
-				map("n", "<leader>hd", gs.diffthis, "Diff This")
-				map("n", "<leader>hD", function()
+				end, "git Blame Line")
+				map("n", "<leader>ghd", gs.diffthis, "git Diff This")
+				map("n", "<leader>ghD", function()
 					gs.diffthis("~")
-				end, "Diff This ~")
+				end, "git Diff This ~")
 
 				-- Toggle Git Ui
-				map("n", "<leader>gb", gs.toggle_current_line_blame, "Toggle Git Line Blame")
-				map("n", "<leader>gd", gs.toggle_deleted, "Toggle Git Delete")
+				map("n", "<leader>gtb", gs.toggle_current_line_blame, "Toggle Git Line Blame")
+				map("n", "<leader>gtd", gs.toggle_deleted, "Toggle Git Delete")
 
 				-- Text Object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")

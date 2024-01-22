@@ -23,7 +23,6 @@ return {
 			x = { name = "+Diagnostics/Quickfix" },
 			t = { name = "+Terminal" },
 			m = { name = "+Markdown" },
-			h = { name = "+Git Hunk" },
 			["<tab>"] = { name = "+Tab" },
 		}, { prefix = "<leader>" })
 	end,
