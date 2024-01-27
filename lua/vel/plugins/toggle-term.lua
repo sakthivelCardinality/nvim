@@ -77,6 +77,11 @@ return {
 
 		keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=60 direction=vertical<cr>", { desc = "Terminal Vertical" })
 		keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal Float" })
-		keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Terminal Tab" })
+		keymap.set(
+			"n",
+			"<leader>tt",
+			"<cmd>ToggleTerm size=60 direction=vertical<cr>",
+			{ desc = "Terminal split Vertical" }
+		)
 	end,
 }
