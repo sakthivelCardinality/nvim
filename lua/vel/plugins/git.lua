@@ -21,8 +21,25 @@ return {
 				end
 
 				-- Action
-				map("n", "]h", gs.next_hunk, "Next Hunk")
-				map("n", "[h", gs.prev_hunk, "Prev Hunk")
+				map("n", "]h", function()
+					if vim.wo.diff then
+						return "]h"
+					end
+					vim.schedule(function()
+						gs.next_hunk()
+					end)
+					return "<Ignore>"
+				end, "Next Hunk")
+
+				map("n", "[h", function()
+					if vim.wo.diff then
+						return "[h"
+					end
+					vim.schedule(function()
+						gs.prev_hunk()
+					end)
+					return "<Ignore>"
+				end, "Previous Hunk")
 
 				-- visual mode
 				map("v", "<leader>ghs", function()

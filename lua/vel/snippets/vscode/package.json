@@ -10,6 +10,12 @@
           "typescriptreact"
         ],
         "path": "./js-ts.json"
+      },
+      {
+        "language": [
+          "rust"
+        ],
+        "path": "./rust.json"
       }
     ]
   }

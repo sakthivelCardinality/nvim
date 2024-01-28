@@ -1,0 +1,9 @@
+{
+  "print_log": {
+    "prefix": "print",
+    "body": [
+      "println!(\"🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} : {:?}\", $1);$0"
+    ],
+    "description": "print"
+  }
+}
