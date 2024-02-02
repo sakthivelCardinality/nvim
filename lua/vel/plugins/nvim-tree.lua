@@ -28,7 +28,7 @@ return {
 			view = {
 				adaptive_size = false,
 				side = "right",
-				relativenumber = true,
+				relativenumber = false,
 				width = 40,
 				signcolumn = "yes",
 			},
@@ -41,6 +41,7 @@ return {
 			},
 			actions = {
 				open_file = {
+					quit_on_open = true,
 					resize_window = true,
 				},
 			},
