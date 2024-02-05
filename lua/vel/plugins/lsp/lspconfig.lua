@@ -96,16 +96,15 @@ return {
 		end
 
 		local servers = {
-			-- "html",
-			-- "cssls",
-			-- "clangd",
+			"html",
+			"cssls",
+			"clangd",
 			-- "tailwindcss",
 			"bashls",
 			"pyright",
-			"angularls",
 			"sqlls",
 			-- "graphql",
-			-- "emmet_ls",
+			"emmet_ls",
 		}
 
 		for _, lsp in ipairs(servers) do
@@ -115,59 +114,33 @@ return {
 			})
 		end
 
-		-- configure html server
-		-- lspconfig["html"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		-- configure angularls language server
+		local mason_registry = require("mason-registry")
+		local angularls_path = mason_registry.get_package("angular-language-server"):get_install_path()
 
-		-- configure css server
-		-- lspconfig["cssls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		local cmd = {
+			"ngserver",
+			"--stdio",
+			"--tsProbeLocations",
+			table.concat({
+				angularls_path,
+				vim.fn.getcwd(),
+			}, ","),
+			"--ngProbeLocations",
+			table.concat({
+				angularls_path .. "/node_modules/@angular/language-server",
+				vim.fn.getcwd(),
+			}, ","),
+		}
 
-		-- configure tailwindcss server
-		-- lspconfig["tailwindcss"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure prisma orm server
-		-- lspconfig["prismals"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure python server
-		-- lspconfig["pyright"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure bash server
-		-- lspconfig["bashls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure c server
-		-- lspconfig["clangd"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure angular server
-		-- lspconfig["angularls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- configure sql server
-		-- lspconfig["sqlls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		lspconfig["angularls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = cmd,
+			on_new_config = function(new_config, new_root_dir)
+				new_config.cmd = cmd
+			end,
+		})
 
 		-- configure rust server
 		lspconfig["rust_analyzer"].setup({
@@ -189,30 +162,6 @@ return {
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		-- })
-
-		-- configure emmet language server
-		-- lspconfig["emmet_ls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		-- })
-
-		-- configure svelte server
-		-- lspconfig["svelte"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = function(client, bufnr)
-		-- 		on_attach(client, bufnr)
-		--
-		-- 		vim.api.nvim_create_autocmd("BufWritePost", {
-		-- 			pattern = { "*.js", "*.ts" },
-		-- 			callback = function(ctx)
-		-- 				if client.name == "svelte" then
-		-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-		-- 				end
-		-- 			end,
-		-- 		})
-		-- 	end,
 		-- })
 
 		-- configure typescript server with plugin
