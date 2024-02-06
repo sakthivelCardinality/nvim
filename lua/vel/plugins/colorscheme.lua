@@ -52,7 +52,7 @@ return {
 			},
 			highlights = {
 				CursorLine = { bg = "none" },
-				CursorLineNr = { fg = "#fff000", bold = true },
+				CursorLineNr = { fg = "#fff000", bold = false },
 			},
 		},
 		config = function(_, opts)

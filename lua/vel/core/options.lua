@@ -60,11 +60,6 @@ opt.ignorecase = true -- Ignore case
 opt.smartcase = true -- Don't ignore case with capitals
 opt.spelllang = { "en" }
 
--- grep format
-opt.grepformat = "%f:%l:%c:%m"
-opt.formatoptions = "jcroqlnt" -- tcqj
-opt.grepprg = "rg --vimgrep"
-
 -- screen split
 opt.splitkeep = "screen"
 opt.splitbelow = true -- Put new windows below current
@@ -82,14 +77,5 @@ opt.list = true -- Show some invisible characters (tabs...
 opt.listchars:append("space:⋅")
 opt.listchars:append("eol:↴")
 
--- window
-opt.wildmode = "longest:full,full" -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
-opt.fillchars = {
-	foldopen = "",
-	foldclose = "",
-	fold = " ",
-	foldsep = " ",
-	diff = "╱",
-	eob = " ",
-}
+-- Markup setup
+opt.conceallevel = 2

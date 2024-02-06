@@ -27,6 +27,9 @@ return {
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
+			opts.desc = "Show LSP Info"
+			keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>", opts)
+
 			opts.desc = "Show LSP references"
 			keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
