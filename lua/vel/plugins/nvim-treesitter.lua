@@ -122,11 +122,11 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter-context",
-	-- 	event = "VeryLazy",
-	-- 	opts = { mode = "cursor", max_lines = 3 },
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "VeryLazy",
+		opts = { mode = "cursor", max_lines = 3 },
+	},
 	{
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",

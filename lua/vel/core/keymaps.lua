@@ -14,8 +14,8 @@ keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent
 keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- insert mode move between beginningand end of line
-keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
-keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
+-- keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
+-- keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
 
 -- Inprove pasting
 keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
@@ -119,6 +119,7 @@ keymap.set("i", ".", ".<c-g>u")
 keymap.set("i", ";", ";<c-g>u")
 
 keymap.set("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
+keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
 
 keymap.set("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
 	desc = "inline find replace",
@@ -136,3 +137,6 @@ keymap.set("x", "Q", ":norm @q<CR>", { desc = " Macro for selecting multiple lin
 
 -- Open line, but stay in normal mode
 keymap.set("n", "<Leader><CR>", "o<Esc>", { desc = "Add blank line below in normal mode" })
+
+-- insert semicolon in the end
+keymap.set({ "n", "i" }, "<A-;>", "<Esc>miA;<Esc>`ii<ESC>", { desc = "Insert semicolon in the end" })
