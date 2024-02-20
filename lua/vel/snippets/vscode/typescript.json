@@ -1,0 +1,43 @@
+{
+  "print_log": {
+    "prefix": "cl",
+    "body": [
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { $1 });$0"
+    ],
+    "description": "print console log"
+  },
+  "print_clipboard_log": {
+    "prefix": "clc",
+    "body": [
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });$0"
+    ],
+    "description": "print console clipboard log"
+  },
+  "ts_map": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map((${2:element}:${3:any},index:number)=>{",
+      "$0",
+      "return ${2:element}; });"
+    ],
+    "description": "ts_map"
+  },
+  "ts_filter": {
+    "prefix": "filter",
+    "body": [
+      "${1:array}.filter((${2:element}:${3:any},index:number)=>{",
+      "$0",
+      "return ${2:element}; });"
+    ],
+    "description": "ts_filter"
+  },
+  "ts_reduce": {
+    "prefix": "reduce",
+    "body": [
+      "${1:iterable}.reduce((${2:previous}, ${3:current}) => {",
+      "$0",
+      "}, ${4:initial});"
+    ],
+    "description": "ts_reduce"
+  }
+}

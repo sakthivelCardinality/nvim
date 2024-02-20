@@ -124,8 +124,9 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+		enabled = false,
 		event = "VeryLazy",
-		opts = { mode = "cursor", max_lines = 3 },
+		opts = {},
 	},
 	{
 		"windwp/nvim-ts-autotag",

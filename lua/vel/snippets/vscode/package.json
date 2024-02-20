@@ -5,11 +5,16 @@
       {
         "language": [
           "javascript",
-          "javacriptreact",
+          "javacriptreact"
+        ],
+        "path": "./javascript.json"
+      },
+      {
+        "language": [
           "typescript",
           "typescriptreact"
         ],
-        "path": "./js-ts.json"
+        "path": "./typescript.json"
       },
       {
         "language": [
