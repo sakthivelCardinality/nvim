@@ -20,6 +20,9 @@ opt.cursorline = true -- Enable highlighting of the current line
 -- terminal
 opt.termguicolors = true -- True color support
 
+-- Enable break indent
+opt.breakindent = true
+
 -- screen
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
@@ -30,8 +33,8 @@ opt.expandtab = true -- Use spaces instead of tabs
 opt.wrap = true -- Disable line wrap
 
 -- popup
-opt.pumblend = 10 -- Popup blend
-opt.pumheight = 10 -- Maximum number of entries in a popup
+-- opt.pumblend = 10 -- Popup blend
+-- opt.pumheight = 10 -- Maximum number of entries in a popup
 
 -- statusline
 opt.showmode = false -- Dont show mode since we have a statusline
@@ -54,7 +57,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir/"
 opt.undolevels = 10000
 
 -- search
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 opt.ignorecase = true -- Ignore case
 opt.smartcase = true -- Don't ignore case with capitals
@@ -74,8 +77,7 @@ opt.backspace = "indent,eol,start"
 
 -- list
 opt.list = true -- Show some invisible characters (tabs...
-opt.listchars:append("space:⋅")
-opt.listchars:append("eol:↴")
+opt.listchars = { tab = ". ", space = ".", eol = "↴" }
 
 -- Markup setup
 opt.conceallevel = 2

@@ -1,9 +1,10 @@
 return {
 	"folke/todo-comments.nvim",
+	enabled = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	cmd = { "TodoTrouble", "TodoTelescope" },
 	event = { "BufReadPre", "BufNewFile" },
-	opts = true,
+	opts = {},
 	keys = {
 		{
 			"]t",

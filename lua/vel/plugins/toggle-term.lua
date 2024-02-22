@@ -1,7 +1,7 @@
 return {
 	"akinsho/toggleterm.nvim",
-	version = "*",
 	event = "VeryLazy",
+	version = "*",
 	opts = {
 		size = 20,
 		open_mapping = [[<c-\>]],

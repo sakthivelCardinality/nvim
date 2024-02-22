@@ -1,9 +1,11 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	enabled = false,
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local lualine = require("lualine")
+		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
 		local config = {
 			options = {
@@ -17,17 +19,21 @@ return {
 					{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
 				},
 				lualine_x = {
+					{
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+						color = { fg = "#ff9e64" },
+					},
 					{ "filetype" },
 				},
 				lualine_y = {
-					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
-					{ "location", padding = { left = 0, right = 1 } },
+					{ "progress", separator = " ", padding = { left = 1, right = 1 } },
 				},
-				lualine_z = {
-					function()
-						return os.date("%r")
-					end,
-				},
+				-- lualine_z = {
+				-- 	function()
+				-- 		return os.date("%r")
+				-- 	end,
+				-- },
 			},
 		}
 

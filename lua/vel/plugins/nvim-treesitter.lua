@@ -124,9 +124,8 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		enabled = false,
-		event = "VeryLazy",
-		opts = {},
+		event = { "BufReadPre", "BufNewFile" },
+		opts = { max_lines = 1 },
 	},
 	{
 		"windwp/nvim-ts-autotag",
