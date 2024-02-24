@@ -4,7 +4,32 @@ return {
 		n_lines = 500,
 	} },
 	{ "echasnovski/mini.cursorword", version = "*", event = "VeryLazy", opts = {} },
-	{ "echasnovski/mini.indentscope", version = "*", event = "VeryLazy", opts = {} },
+	{ "echasnovski/mini.pairs", version = "*", event = "VeryLazy", opts = {} },
+	{
+		"echasnovski/mini.indentscope",
+		version = "*",
+		event = "VeryLazy",
+		opts = {
+			options = {
+				try_as_border = true,
+			},
+		},
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = {
+					"help",
+					"dashboard",
+					"lazy",
+					"mason",
+					"toggleterm",
+					"NvimTree",
+				},
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
+	},
 	{
 		"echasnovski/mini.surround",
 		version = "*",

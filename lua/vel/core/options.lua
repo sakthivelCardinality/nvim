@@ -33,8 +33,8 @@ opt.expandtab = true -- Use spaces instead of tabs
 opt.wrap = true -- Disable line wrap
 
 -- popup
--- opt.pumblend = 10 -- Popup blend
--- opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
 
 -- statusline
 opt.showmode = false -- Dont show mode since we have a statusline
@@ -77,7 +77,7 @@ opt.backspace = "indent,eol,start"
 
 -- list
 opt.list = true -- Show some invisible characters (tabs...
-opt.listchars = { tab = ". ", space = ".", eol = "↴" }
+opt.listchars = { tab = ". ", eol = "↴", trail = "·" }
 
 -- Markup setup
 opt.conceallevel = 2
