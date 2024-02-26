@@ -46,6 +46,7 @@ return {
 			{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
 			{ "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
 			{ "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
+			{ "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols Files" },
 			{ "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
 			{ "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
 		},

@@ -26,7 +26,7 @@ opt.breakindent = true
 -- screen
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
-opt.scrolloff = 8 -- Lines of context
+opt.scrolloff = 10 -- Lines of context
 opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 opt.expandtab = true -- Use spaces instead of tabs
@@ -61,7 +61,10 @@ opt.hlsearch = true
 opt.incsearch = true
 opt.ignorecase = true -- Ignore case
 opt.smartcase = true -- Don't ignore case with capitals
-opt.spelllang = { "en" }
+
+-- spell check
+opt.spelllang = { "en_us" }
+opt.spell = true
 
 -- screen split
 opt.splitkeep = "screen"
@@ -73,7 +76,7 @@ opt.inccommand = "nosplit" -- preview incremental substitute
 opt.completeopt = "menu,menuone,noselect"
 
 -- allow backspace on indent, end of line or insert mode start position
-opt.backspace = "indent,eol,start"
+opt.backspace = { "start", "eol", "indent" }
 
 -- list
 opt.list = true -- Show some invisible characters (tabs...

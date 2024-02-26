@@ -125,7 +125,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPre", "BufNewFile" },
-		opts = { max_lines = 1 },
+		opts = { max_lines = 3 },
 	},
 	{
 		"windwp/nvim-ts-autotag",
