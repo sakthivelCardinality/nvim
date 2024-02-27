@@ -125,24 +125,19 @@ return {
 			"ngserver",
 			"--stdio",
 			"--tsProbeLocations",
-			table.concat({
-				angularls_path,
-				vim.fn.getcwd(),
-			}, ","),
+			table.concat({ angularls_path, vim.fn.getcwd() }, ","),
 			"--ngProbeLocations",
-			table.concat({
-				angularls_path .. "/node_modules/@angular/language-server",
-				vim.fn.getcwd(),
-			}, ","),
+			table.concat({ angularls_path .. "/node_modules/@angular/language-server", vim.fn.getcwd() }, ","),
+			"--experimental-ivy",
 		}
 
 		lspconfig["angularls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
 			cmd = cmd,
 			on_new_config = function(new_config, new_root_dir)
 				new_config.cmd = cmd
 			end,
+			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		-- configure rust server

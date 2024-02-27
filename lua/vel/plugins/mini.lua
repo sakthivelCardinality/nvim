@@ -1,13 +1,31 @@
 return {
-	{ "echasnovski/mini.statusline", version = "*", event = "VeryLazy", opts = {} },
-	{ "echasnovski/mini.ai", version = "*", event = "VeryLazy", opts = {
+	{ "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
+	{ "echasnovski/mini.cursorword", event = "VeryLazy", opts = {} },
+	{ "echasnovski/mini.pairs", event = "VeryLazy", opts = {} },
+	{ "echasnovski/mini.ai", event = "VeryLazy", opts = {
 		n_lines = 500,
 	} },
-	{ "echasnovski/mini.cursorword", version = "*", event = "VeryLazy", opts = {} },
-	{ "echasnovski/mini.pairs", version = "*", event = "VeryLazy", opts = {} },
+	{
+		"echasnovski/mini.hipatterns",
+		event = "VeryLazy",
+		config = function()
+			local hipatterns = require("mini.hipatterns")
+			hipatterns.setup({
+				highlighters = {
+					-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+					fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+					hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+					todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+					note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+					-- Highlight hex color strings (`#rrggbb`) using that color
+					hex_color = hipatterns.gen_highlighter.hex_color(),
+				},
+			})
+		end,
+	},
 	{
 		"echasnovski/mini.indentscope",
-		version = "*",
 		event = "VeryLazy",
 		opts = {
 			options = {
@@ -32,7 +50,6 @@ return {
 	},
 	{
 		"echasnovski/mini.surround",
-		version = "*",
 		event = "VeryLazy",
 		opts = {
 			mappings = {

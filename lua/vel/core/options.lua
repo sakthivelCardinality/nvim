@@ -64,7 +64,7 @@ opt.smartcase = true -- Don't ignore case with capitals
 
 -- spell check
 opt.spelllang = { "en_us" }
-opt.spell = true
+opt.spell = false
 
 -- screen split
 opt.splitkeep = "screen"
