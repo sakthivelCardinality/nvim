@@ -42,11 +42,19 @@ return {
 					highlight = "Directory",
 					text_align = "left",
 				},
+				{
+					filetype = "NvimTree",
+					text = "File Explorer",
+					text_align = "left",
+					highlight = "Directory",
+					separator = true,
+				},
 			},
 		},
 	},
 	config = function(_, opts)
 		require("bufferline").setup(opts)
+
 		-- Fix bufferline when restoring a session
 		vim.api.nvim_create_autocmd("BufAdd", {
 			callback = function()

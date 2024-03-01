@@ -1,16 +1,14 @@
-local function augroup(name)
-	return vim.api.nvim_create_augroup("vel_" .. name, { clear = true })
-end
+local utils = require("vel.core.utils")
 
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-	group = augroup("checktime"),
+	group = utils.augroup("checktime"),
 	command = "checktime",
 })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = augroup("highlight_yank"),
+	group = utils.augroup("highlight_yank"),
 	callback = function()
 		vim.highlight.on_yank()
 	end,
@@ -18,7 +16,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-	group = augroup("resize_splits"),
+	group = utils.augroup("resize_splits"),
 	callback = function()
 		local current_tab = vim.fn.tabpagenr()
 		vim.cmd("tabdo wincmd =")
@@ -28,7 +26,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
-	group = augroup("last_loc"),
+	group = utils.augroup("last_loc"),
 	callback = function(event)
 		local exclude = { "gitcommit" }
 		local buf = event.buf
@@ -46,7 +44,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("close_with_q"),
+	group = utils.augroup("close_with_q"),
 	pattern = {
 		"PlenaryTestPopup",
 		"help",
@@ -71,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("wrap_spell"),
+	group = utils.augroup("wrap_spell"),
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
 		vim.opt_local.wrap = true
@@ -81,7 +79,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Fix conceallevel for json files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	group = augroup("json_conceal"),
+	group = utils.augroup("json_conceal"),
 	pattern = { "json", "jsonc", "json5" },
 	callback = function()
 		vim.opt_local.conceallevel = 0
@@ -90,7 +88,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	group = augroup("auto_create_dir"),
+	group = utils.augroup("auto_create_dir"),
 	callback = function(event)
 		if event.match:match("^%w%w+://") then
 			return

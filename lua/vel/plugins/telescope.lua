@@ -54,23 +54,15 @@ return {
 			-- change the stype for the telescope find_files and git_files
 			pickers = {
 				find_files = {
+					previewer = false,
 					path_display = function(_, path)
-						local tail = vim.fs.basename(path)
-						local parent = vim.fs.dirname(path)
-						if parent == "." then
-							return tail
-						end
-						return string.format("%s\t\t%s", tail, parent)
+						return require("vel.core.utils").change_path_display(path)
 					end,
 				},
 				git_files = {
+					previewer = false,
 					path_display = function(_, path)
-						local tail = vim.fs.basename(path)
-						local parent = vim.fs.dirname(path)
-						if parent == "." then
-							return tail
-						end
-						return string.format("%s\t\t%s", tail, parent)
+						return require("vel.core.utils").change_path_display(path)
 					end,
 				},
 			},
@@ -91,6 +83,14 @@ return {
 						["<C-j>"] = function(...)
 							require("telescope.actions").move_selection_next(...) -- move to next result
 						end,
+						["<M-p>"] = function(...)
+							require("telescope.actions.layout").toggle_preview(...)
+						end,
+					},
+					n = {
+						["<M-p>"] = function(...)
+							require("telescope.actions.layout").toggle_preview(...)
+						end,
 					},
 				},
 			},
@@ -106,10 +106,12 @@ return {
 		},
 		config = function(_, opts)
 			require("telescope").setup(opts)
+			local utils = require("vel.core.utils")
 
 			-- change parent directory highlights style
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = "TelescopeResults",
+				group = utils.augroup("telescope_result"),
 				callback = function(ctx)
 					vim.api.nvim_buf_call(ctx.buf, function()
 						vim.fn.matchadd("TelescopeParent", "\t\t.*$")
