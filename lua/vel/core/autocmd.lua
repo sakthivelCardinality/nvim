@@ -97,3 +97,40 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
+
+-- Enable spell checking for certain file types
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = utils.augroup("spell_check_file_pattern"),
+	pattern = { "*.txt", "*.md", "*.tex", "*.typ" },
+	callback = function()
+		vim.opt.spell = true
+	end,
+})
+
+-- Set shiftwidth to 4 in these filetypes
+vim.api.nvim_create_autocmd("FileType", {
+	group = utils.augroup("change_shift_width_file_pattern"),
+	pattern = { "c", "cpp", "py", "java", "cs" },
+	callback = function()
+		vim.bo.shiftwidth = 4
+	end,
+})
+
+-- Auto save file on focus change
+vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "BufWinLeave" }, {
+	group = utils.augroup("auto_save_file_on_focus_change"),
+	callback = function()
+		if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+			vim.cmd("silent! w")
+		end
+	end,
+})
+
+-- Fix commnet on new line 
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	group = utils.augroup("fix_comment_on_new_line"),
+  pattern = { "*" },
+  callback = function()
+    vim.cmd([[set formatoptions-=cro]])
+  end,
+})
