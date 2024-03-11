@@ -120,17 +120,19 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "BufWinLeave" }, {
 	group = utils.augroup("auto_save_file_on_focus_change"),
 	callback = function()
-		if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+		local buf = vim.api.nvim_get_current_buf()
+		local buf_modified = vim.api.nvim_buf_get_option(buf, "modified")
+		if vim.bo.filetype ~= "" and vim.bo.buftype == "" and buf_modified == true then
 			vim.cmd("silent! w")
 		end
 	end,
 })
 
--- Fix commnet on new line 
+-- Fix commnet on new line
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	group = utils.augroup("fix_comment_on_new_line"),
-  pattern = { "*" },
-  callback = function()
-    vim.cmd([[set formatoptions-=cro]])
-  end,
+	pattern = { "*" },
+	callback = function()
+		vim.cmd([[set formatoptions-=cro]])
+	end,
 })
