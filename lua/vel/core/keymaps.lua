@@ -18,9 +18,22 @@ keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, s
 -- keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
 
 -- Inprove pasting
-keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
+keymap.set({"x", "v"}, "p", '"_dp', { desc = "Preserve previous word when pasting", silent = true })
+keymap.set({"x", "v"}, "P", '"_dP', { desc = "Preserve previous word when pasting", silent = true })
 -- keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy the content to system clipboard" })
 -- keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy the content to system clipboard" })
+
+-- Change text without putting it into the vim register
+keymap.set("n", "c", '"_c', { silent = true })
+keymap.set("n", "C", '"_C', { silent = true })
+keymap.set("n", "cc", '"_cc', { silent = true })
+keymap.set("x", "c", '"_c', { silent = true })
+
+-- Don't yank on delete char
+keymap.set("n", "x", '"_x', { silent = true })
+keymap.set("n", "X", '"_X', { silent = true })
+keymap.set("v", "x", '"_x', { silent = true })
+keymap.set("v", "X", '"_X', { silent = true })
 
 -- scroll at the center of screen
 keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })
@@ -120,7 +133,7 @@ keymap.set("i", ",", ",<c-g>u")
 keymap.set("i", ".", ".<c-g>u")
 keymap.set("i", ";", ";<c-g>u")
 
-keymap.set("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
+keymap.set("n", "<leader>y", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
 keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
 
 keymap.set("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {

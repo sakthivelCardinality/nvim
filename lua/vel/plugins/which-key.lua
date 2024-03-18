@@ -31,6 +31,7 @@ return {
 			["["] = { name = "+Prev" },
 			["g"] = { name = "+Goto" },
 			["gs"] = { name = "+Surround" },
+			["<leader>gd"] = { name = "+Diff View" },
 		})
 	end,
 }

@@ -40,19 +40,22 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
+				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				javascriptreact = { { "prettierd", "prettier" } },
+				typescriptreact = { { "prettierd", "prettier" } },
+				json = { { "prettierd", "prettier" } },
+				graphql = { { "prettierd", "prettier" } },
+				svelte = { { "prettierd", "prettier" } },
+				css = { { "prettierd", "prettier" } },
+				scss = { { "prettierd", "prettier" } },
+				html = { { "prettierd", "prettier" } },
+				yaml = { "yamlfix" },
+				bash = { "beautysh" },
+				markdown = { { "prettierd", "prettier" } },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				java = { "google-java-format" },
 			},
 			format_on_save = function()
 				if vim.g.conform_autoformat == false then

@@ -48,6 +48,7 @@ return {
 				"sqlls",
 				"yamlls",
 				"zls",
+				"jdtls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = false, -- not the same as ensure_installed
@@ -55,6 +56,10 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"beautysh", -- bash formatter
+				"yamlfix", -- yaml formatter
+				"google-java-format", -- java formatter
+				"prettierd", -- prettierd formatter
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter

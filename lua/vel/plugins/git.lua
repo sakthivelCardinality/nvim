@@ -1,5 +1,58 @@
 return {
-	{ "tpope/vim-fugitive", event = { "BufReadPre", "BufNewFile" } },
+	{ "tpope/vim-fugitive", enabled = false, event = { "BufReadPre", "BufNewFile" } },
+	{
+		"NeogitOrg/neogit",
+		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>gg",
+				function()
+					local neogit = require("neogit")
+					neogit.open({ kind = "auto" })
+				end,
+				desc = "Neogit toggle",
+				mode = { "n" },
+			},
+		},
+		opts = {},
+	},
+	{
+		"sindrets/diffview.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>gdo",
+				"<cmd>DiffviewOpen<cr>",
+				desc = "Open",
+				mode = { "n" },
+			},
+			{
+				"<leader>gdc",
+				"<cmd>DiffviewClose<cr>",
+				desc = "Close",
+				mode = { "n" },
+			},
+			{
+				"<leader>gdr",
+				"<cmd>DiffviewRefresh<cr>",
+				desc = "Refresh",
+				mode = { "n" },
+			},
+			{
+				"<leader>gdh",
+				"<cmd>DiffviewFileHistory %<cr>",
+				desc = "Current File History",
+				mode = { "n" },
+			},
+			{
+				"<leader>gdH",
+				"<cmd>DiffviewFileHistory<cr>",
+				desc = "File History",
+				mode = { "n" },
+			},
+		},
+		opts = {},
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -14,7 +67,7 @@ return {
 			},
 			current_line_blame = true,
 			on_attach = function(buffer)
-				local gs = require("gitsigns")
+				local gs = package.loaded.gitsigns
 
 				local function map(mode, l, r, desc)
 					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })

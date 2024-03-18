@@ -60,6 +60,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"checkhealth",
 		"neotest-summary",
 		"neotest-output-panel",
+		"fugitive"
 	},
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
@@ -144,4 +145,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		vim.opt_local.conceallevel = 0
 	end,
+})
+
+-- Add timestamp as extension for backup files
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = utils.augroup("timestamp_backupext"),
+	desc = "Add timestamp to backup extension",
+	pattern = "*",
+	callback = function()
+		vim.opt.backupext = "-" .. vim.fn.strftime("%Y%m%d%H%M")
+	end,
+})
+
+--- Remove all trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = utils.augroup("TrimWhiteSpaceGrp"),
+	command = [[:%s/\s\+$//e]],
 })
