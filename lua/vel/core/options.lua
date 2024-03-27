@@ -84,4 +84,4 @@ opt.list = true -- Show some invisible characters (tabs...
 opt.listchars = { tab = "  ", eol = "↴", trail = "·" }
 
 -- Markup setup
-opt.conceallevel = 2
+opt.conceallevel = 0

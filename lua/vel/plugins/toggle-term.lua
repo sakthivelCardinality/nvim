@@ -1,6 +1,6 @@
 return {
 	"akinsho/toggleterm.nvim",
-	enabled = false,
+	enabled = true,
 	event = "VeryLazy",
 	version = "*",
 	opts = {
@@ -64,7 +64,7 @@ return {
 
 		keymap.set(
 			"n",
-			"<leader>gg",
+			"<leader>gl",
 			"<cmd>lua _lazygit_toggle()<CR>",
 			{ noremap = true, silent = true, desc = "Lazygit" }
 		)
