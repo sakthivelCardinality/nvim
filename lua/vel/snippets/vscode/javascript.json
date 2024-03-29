@@ -1,0 +1,16 @@
+{
+  "print_log": {
+    "prefix": "cl",
+    "body": [
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { $1 });$0"
+    ],
+    "description": "print console log"
+  },
+  "print_clipboard_log": {
+    "prefix": "clc",
+    "body": [
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });$0"
+    ],
+    "description": "print console clipboard log"
+  }
+}
