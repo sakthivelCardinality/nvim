@@ -98,6 +98,9 @@ keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search
 -- save file
 keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
+-- Delete word right
+-- keymap.set({ "i"}, "<C-e>", "<C-o>dw", { desc = "Delete word right" })
+
 -- better indenting
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")

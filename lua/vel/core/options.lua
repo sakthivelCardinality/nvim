@@ -52,9 +52,9 @@ opt.timeoutlen = 300
 opt.updatetime = 100 -- Save swap file and trigger CursorHold
 opt.swapfile = false
 opt.backup = true
-opt.backupdir = os.getenv("HOME") .. "/.vim/backup/"
+opt.backupdir = vim.env.HOME .. "/.vim/backup/"
 opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir/"
+opt.undodir = vim.env.HOME .. "/.vim/undodir/"
 opt.undolevels = 10000
 
 -- search
