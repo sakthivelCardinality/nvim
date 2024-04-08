@@ -175,6 +175,13 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			root_dir = util.root_pattern(
+				"package.json",
+				"tsconfig.json",
+				"jsconfig.json",
+				"gulpfile.js",
+				"node_modules"
+			),
 			commands = {
 				OrganizeImports = {
 					organize_imports,

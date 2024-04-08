@@ -6,6 +6,13 @@ return {
 		cmd = "Telescope",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				config = function()
+					require("telescope").load_extension("fzf")
+				end,
+			},
 		},
 		keys = {
 			{ "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
@@ -55,13 +62,13 @@ return {
 			-- change the stype for the telescope find_files and git_files
 			pickers = {
 				find_files = {
-					previewer = false,
+					previewer = true,
 					path_display = function(_, path)
 						return require("vel.core.utils").change_path_display(path)
 					end,
 				},
 				git_files = {
-					previewer = false,
+					previewer = true,
 					path_display = function(_, path)
 						return require("vel.core.utils").change_path_display(path)
 					end,
@@ -120,14 +127,6 @@ return {
 					end)
 				end,
 			})
-		end,
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		event = "VeryLazy",
-		build = "make",
-		config = function()
-			require("telescope").load_extension("fzf")
 		end,
 	},
 	-- {

@@ -41,6 +41,9 @@ return {
 			},
 			actions = {
 				open_file = {
+				  window_picker = {
+				    enable = false
+				  },
 					quit_on_open = false,
 					resize_window = true,
 				},
