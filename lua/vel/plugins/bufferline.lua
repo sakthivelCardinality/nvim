@@ -24,17 +24,17 @@ return {
 			end,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = true,
-			-- diagnostics_indicator = function(_, _, diag)
-			-- 	local icons = {
-			-- 		Error = " ",
-			-- 		Warn = " ",
-			-- 		Hint = " ",
-			-- 		Info = " ",
-			-- 	}
-			-- 	local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-			-- 		.. (diag.warning and icons.Warn .. diag.warning or "")
-			-- 	return vim.trim(ret)
-			-- end,
+			diagnostics_indicator = function(_, _, diag)
+				local icons = {
+					Error = " ",
+					Warn = " ",
+					Hint = " ",
+					Info = " ",
+				}
+				local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+					.. (diag.warning and icons.Warn .. diag.warning or "")
+				return vim.trim(ret)
+			end,
 			offsets = {
 				{
 					filetype = "neo-tree",
@@ -54,9 +54,11 @@ return {
 	},
 	config = function(_, opts)
 		require("bufferline").setup(opts)
+		local utils = require("vel.core.utils")
 
 		-- Fix bufferline when restoring a session
 		vim.api.nvim_create_autocmd("BufAdd", {
+			group = utils.augroup("buffer_restore"),
 			callback = function()
 				vim.schedule(function()
 					pcall(nvim_bufferline)

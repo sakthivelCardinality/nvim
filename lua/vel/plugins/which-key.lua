@@ -1,13 +1,9 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 500
-	end,
-	config = function()
-		local wk = require("which-key")
-		wk.register({
+	opts = {
+		plugins = { spelling = true },
+		defaults = {
 			mode = { "n", "v" },
 			["<leader>d"] = { name = "+Debug" },
 			["<leader>da"] = { name = "+Adapters" },
@@ -32,6 +28,11 @@ return {
 			["g"] = { name = "+Goto" },
 			["gs"] = { name = "+Surround" },
 			["<leader>gd"] = { name = "+Diff View" },
-		})
+		},
+	},
+	config = function(_, opts)
+		local wk = require("which-key")
+		wk.setup(opts)
+		wk.register(opts.defaults)
 	end,
 }

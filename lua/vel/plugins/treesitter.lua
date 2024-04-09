@@ -131,6 +131,16 @@ return {
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = { max_lines = 3 },
+		keys = {
+			{
+				"<leader>ut",
+				function()
+					local tsc = require("treesitter-context")
+					tsc.toggle()
+				end,
+				desc = "Toggle Treesitter Context",
+			},
+		},
 	},
 	{
 		"windwp/nvim-ts-autotag",
