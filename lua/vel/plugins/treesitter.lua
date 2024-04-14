@@ -127,39 +127,39 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = { max_lines = 3 },
-		keys = {
-			{
-				"<leader>ut",
-				function()
-					local tsc = require("treesitter-context")
-					tsc.toggle()
-				end,
-				desc = "Toggle Treesitter Context",
-			},
-		},
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	opts = { max_lines = 3 },
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>ut",
+	-- 			function()
+	-- 				local tsc = require("treesitter-context")
+	-- 				tsc.toggle()
+	-- 			end,
+	-- 			desc = "Toggle Treesitter Context",
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
 		opts = {},
 	},
-	{
-		"windwp/nvim-autopairs",
-		enabled = false,
-		event = "InsertEnter",
-		opts = {
-			check_ts = true,
-			ts_config = {
-				lua = { "string" }, -- it will not add a pair on that treesitter node
-				javascript = { "template_string" },
-				java = false, -- don't check treesitter on java
-			},
-		},
-	},
+	-- {
+	-- 	"windwp/nvim-autopairs",
+	-- 	enabled = false,
+	-- 	event = "InsertEnter",
+	-- 	opts = {
+	-- 		check_ts = true,
+	-- 		ts_config = {
+	-- 			lua = { "string" }, -- it will not add a pair on that treesitter node
+	-- 			javascript = { "template_string" },
+	-- 			java = false, -- don't check treesitter on java
+	-- 		},
+	-- 	},
+	-- },
 	-- {
 	-- 	"hiphish/rainbow-delimiters.nvim",
 	-- 	event = "VeryLazy",

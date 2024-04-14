@@ -8,7 +8,7 @@ return {
 				"<leader>gg",
 				function()
 					local neogit = require("neogit")
-					neogit.open({ kind = "auto" })
+					neogit.open()
 				end,
 				desc = "Neogit toggle",
 				mode = { "n" },

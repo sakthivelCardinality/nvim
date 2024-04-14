@@ -20,8 +20,8 @@ keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, s
 -- Inprove pasting
 keymap.set({"x", "v"}, "p", '"_dp', { desc = "Preserve previous word when pasting", silent = true })
 keymap.set({"x", "v"}, "P", '"_dP', { desc = "Preserve previous word when pasting", silent = true })
--- keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy the content to system clipboard" })
--- keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy the content to system clipboard" })
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy the content to system clipboard" })
+keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy the content to system clipboard" })
 
 -- Change text without putting it into the vim register
 keymap.set("n", "c", '"_c', { silent = true })
@@ -140,8 +140,8 @@ keymap.set("i", ",", ",<c-g>u")
 keymap.set("i", ".", ".<c-g>u")
 keymap.set("i", ";", ";<c-g>u")
 
-keymap.set("n", "<leader>y", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
-keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
+-- keymap.set("n", "<leader>y", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
+-- keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
 
 keymap.set("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
 	desc = "inline find replace",
