@@ -63,12 +63,22 @@ return {
 			pickers = {
 				find_files = {
 					previewer = true,
+					-- path_display = {
+					-- 	filename_first = {
+					-- 		reverse_directories = false,
+					-- 	},
+					-- },
 					path_display = function(_, path)
 						return require("vel.core.utils").change_path_display(path)
 					end,
 				},
 				git_files = {
 					previewer = true,
+					-- path_display = {
+					-- 	filename_first = {
+					-- 		reverse_directories = false,
+					-- 	},
+					-- },
 					path_display = function(_, path)
 						return require("vel.core.utils").change_path_display(path)
 					end,

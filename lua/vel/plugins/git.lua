@@ -2,7 +2,7 @@ return {
 	{ "tpope/vim-fugitive", enabled = false, event = { "BufReadPre", "BufNewFile" } },
 	{
 		"NeogitOrg/neogit",
-		event = { "BufReadPre", "BufNewFile" },
+		evnet = "VeryLazy",
 		keys = {
 			{
 				"<leader>gg",
@@ -18,7 +18,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		event = { "BufReadPre", "BufNewFile" },
+		evnet = "VeryLazy",
 		keys = {
 			{
 				"<leader>gdo",
