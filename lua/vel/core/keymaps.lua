@@ -143,7 +143,7 @@ keymap.set("i", ";", ";<c-g>u")
 -- keymap.set("n", "<leader>y", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
 -- keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
 
-keymap.set("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
+keymap.set("n", "<leader>rp", ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", {
 	desc = "inline find replace",
 })
 
