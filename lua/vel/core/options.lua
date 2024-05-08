@@ -12,6 +12,7 @@ opt.mouse = "a" -- Enable mouse mode
 
 -- clipboard
 -- opt.clipboard = "unnamedplus" -- Sync with system clipboard
+opt.clipboard = ""
 
 -- cursor
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode

@@ -18,10 +18,12 @@ keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, s
 -- keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
 
 -- Inprove pasting
-keymap.set({"x", "v"}, "p", '"_dp', { desc = "Preserve previous word when pasting", silent = true })
-keymap.set({"x", "v"}, "P", '"_dP', { desc = "Preserve previous word when pasting", silent = true })
-keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy the content to system clipboard" })
-keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy the content to system clipboard" })
+-- keymap.set({"x", "v"}, "p", '"_dp', { desc = "Preserve previous word when pasting", silent = true })
+keymap.set({ "x", "v" }, "p", '"_dP', { desc = "Preserve previous word when pasting", silent = true })
+keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy the content to system clipboard", silent = true })
+keymap.set("n", "<leader>Y", '"+y$', { desc = "Copy the content to system clipboard", silent = true })
+-- keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Past the content from system clipboard", silent = true })
+-- keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "Past the content from system clipboard", silent = true })
 
 -- Change text without putting it into the vim register
 keymap.set("n", "c", '"_c', { silent = true })
