@@ -43,9 +43,9 @@ return {
 			-- enable indentation
 			indent = { enable = true },
 			-- enable autotagging (w/ nvim-ts-autotag plugin)
-			autotag = {
-				enable = true,
-			},
+			-- autotag = {
+			-- 	enable = true,
+			-- },
 			incremental_selection = {
 				enable = true,
 				keymaps = {
@@ -144,8 +144,15 @@ return {
 	-- },
 	{
 		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
-		opts = {},
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("nvim-ts-autotag").setup({
+				opts = {
+					-- Defaults
+					enable_close_on_slash = true,
+				},
+			})
+		end,
 	},
 	-- {
 	-- 	"windwp/nvim-autopairs",

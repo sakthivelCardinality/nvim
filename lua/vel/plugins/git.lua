@@ -1,7 +1,26 @@
 return {
-	{ "tpope/vim-fugitive", enabled = false, event = { "BufReadPre", "BufNewFile" } },
+	{
+		"tpope/vim-fugitive",
+		enabled = true,
+		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>gg",
+				"<cmd>Git<cr>",
+				desc = "Git Toggle",
+				mode = { "n" },
+			},
+			{
+				"<leader>gdo",
+				"<cmd>Gvdiffsplit!<cr>",
+				desc = "Git Diff Open",
+				mode = { "n" },
+			},
+		},
+	},
 	{
 		"NeogitOrg/neogit",
+		enabled = false,
 		evnet = "VeryLazy",
 		keys = {
 			{
@@ -14,10 +33,11 @@ return {
 				mode = { "n" },
 			},
 		},
-		opts = {},
+		config = true,
 	},
 	{
 		"sindrets/diffview.nvim",
+		enabled = false,
 		evnet = "VeryLazy",
 		keys = {
 			{
@@ -58,33 +78,34 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			current_line_blame = true,
+			attach_to_untracked = true,
 			on_attach = function(buffer)
-				local gs = package.loaded.gitsigns
+        local gs = require('gitsigns')
 
 				local function map(mode, l, r, desc)
 					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
 				end
 
 				-- Action
-				map("n", "]h", function()
+				map("n", "]c", function()
 					if vim.wo.diff then
-						return "]h"
+						return "]c"
 					end
 					vim.schedule(function()
 						gs.next_hunk()
 					end)
 					return "<Ignore>"
-				end, "Next Hunk")
+				end, "Goto Next Git Hunk")
 
-				map("n", "[h", function()
+				map("n", "[c", function()
 					if vim.wo.diff then
-						return "[h"
+						return "[c"
 					end
 					vim.schedule(function()
 						gs.prev_hunk()
 					end)
 					return "<Ignore>"
-				end, "Previous Hunk")
+				end, "Goto Previous Git Hunk")
 
 				-- visual mode
 				map("v", "<leader>ghs", function()

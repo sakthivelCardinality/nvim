@@ -104,6 +104,12 @@ return {
 						["<M-p>"] = function(...)
 							require("telescope.actions.layout").toggle_preview(...)
 						end,
+						["<C-Down>"] = function(...)
+							require("telescope.actions").cycle_history_next(...)
+						end,
+						["<C-Up>"] = function(...)
+							require("telescope.actions").cycle_history_prev(...)
+						end,
 					},
 					n = {
 						["<M-p>"] = function(...)
