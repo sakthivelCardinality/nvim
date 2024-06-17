@@ -32,9 +32,7 @@ return {
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 		opts = {
-			options = {
-				transparency = false,
-			},
+			options = {},
 			styles = {
 				types = "NONE",
 				methods = "italic",
@@ -53,6 +51,7 @@ return {
 			highlights = {
 				CursorLine = { bg = "none" },
 				CursorLineNr = { fg = "#fff000", bold = false },
+				Whitespace = { fg = '#303642' }
 			},
 		},
 		config = function(_, opts)

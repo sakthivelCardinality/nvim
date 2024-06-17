@@ -1,9 +1,8 @@
 return {
 	"L3MON4D3/LuaSnip",
+	version = "v2.*",
+	build = "make install_jsregexp",
 	event = "InsertEnter",
-	build = (not jit.os:find("Windows"))
-			and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-		or nil,
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		config = function()
@@ -24,20 +23,6 @@ return {
 			expr = true,
 			silent = true,
 			mode = "i",
-		},
-		{
-			"<tab>",
-			function()
-				require("luasnip").jump(1)
-			end,
-			mode = "s",
-		},
-		{
-			"<s-tab>",
-			function()
-				require("luasnip").jump(-1)
-			end,
-			mode = { "i", "s" },
 		},
 	},
 }

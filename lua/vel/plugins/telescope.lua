@@ -89,7 +89,7 @@ return {
 				layout_config = { prompt_position = "top" },
 				sorting_strategy = "ascending",
 				winblend = 0,
-				file_ignore_patterns = { ".git/", "node_modules/", "dist/", "target/", ".angular/" },
+				file_ignore_patterns = { ".git/", "node_modules/", "dist/", "target/", ".angular/", "src/assets" },
 				mappings = {
 					i = {
 						["<esc>"] = function(...)

@@ -82,7 +82,7 @@ opt.backspace = { "start", "eol", "indent" }
 
 -- list
 opt.list = true -- Show some invisible characters (tabs...
-opt.listchars = { tab = "  ", eol = "↴", trail = "·" }
+opt.listchars = { tab = '» ', eol = "↴", trail = "·", nbsp = '␣', space = '.' }
 
 -- Markup setup
 opt.conceallevel = 0

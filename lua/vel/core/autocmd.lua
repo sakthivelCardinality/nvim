@@ -123,6 +123,7 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "BufWinLeave" }, {
 	callback = function()
 		local buf = vim.api.nvim_get_current_buf()
 		local buf_modified = vim.api.nvim_buf_get_option(buf, "modified")
+		-- local buf_modified = vim.bo[buf].modified
 		if vim.bo.filetype ~= "" and vim.bo.buftype == "" and buf_modified == true then
 			vim.cmd("silent! w")
 		end
