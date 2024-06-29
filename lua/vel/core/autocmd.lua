@@ -91,10 +91,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	group = utils.augroup("auto_create_dir"),
 	callback = function(event)
-		if event.match:match("^%w%w+://") then
+		if event.match:match("^%w%w+:[\\/][\\/]") then
 			return
 		end
-		local file = vim.loop.fs_realpath(event.match) or event.match
+		local file = vim.uv.fs_realpath(event.match) or event.match
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- Enable spell checking for certain file types
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = utils.augroup("spell_check_file_pattern"),
-	pattern = { "*.txt", "*.md", "*.tex", "*.typ" },
+	pattern = { "*.txt", "*.md", "*.tex", "*.typ", "gitcommit", "markdown" },
 	callback = function()
 		vim.opt.spell = true
 	end,
@@ -122,8 +122,7 @@ vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "BufWinLeave" }, {
 	group = utils.augroup("auto_save_file_on_focus_change"),
 	callback = function()
 		local buf = vim.api.nvim_get_current_buf()
-		local buf_modified = vim.api.nvim_buf_get_option(buf, "modified")
-		-- local buf_modified = vim.bo[buf].modified
+		local buf_modified = vim.bo[buf].modified
 		if vim.bo.filetype ~= "" and vim.bo.buftype == "" and buf_modified == true then
 			vim.cmd("silent! w")
 		end

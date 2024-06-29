@@ -35,7 +35,7 @@ return {
 				-- width = 40,
 				signcolumn = "yes",
 
-        -- Added below for the float window
+				-- Added below for the float window
 				float = {
 					enable = true,
 					open_win_config = function()
@@ -81,6 +81,7 @@ return {
 				root_folder_label = true,
 				highlight_git = true,
 				highlight_opened_files = "none",
+				group_empty = true,
 
 				indent_markers = {
 					enable = false,
