@@ -162,3 +162,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	group = utils.augroup("TrimWhiteSpaceGrp"),
 	command = [[:%s/\s\+$//e]],
 })
+

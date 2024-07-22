@@ -1,38 +1,44 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {
-		plugins = { spelling = true },
-		defaults = {
-			mode = { "n", "v" },
-			["<leader>d"] = { name = "+Debug" },
-			["<leader>da"] = { name = "+Adapters" },
-			["<leader>r"] = { name = "+Replace" },
-			["<leader>o"] = { name = "+Obsidian" },
-			["<leader>u"] = { name = "+UI" },
-			["<leader>c"] = { name = "+Code" },
-			["<leader>f"] = { name = "+File/Find" },
-			["<leader>b"] = { name = "+Buffer" },
-			["<leader>g"] = { name = "+Git" },
-			["<leader>gh"] = { name = "+Git Blame" },
-			["<leader>gt"] = { name = "+Git toggle" },
-			["<leader>q"] = { name = "+Quit/Session" },
-			["<leader>s"] = { name = "+Search" },
-			["<leader>w"] = { name = "+Window" },
-			["<leader>x"] = { name = "+Diagnostics/Quickfix" },
-			["<leader>t"] = { name = "+Terminal" },
-			["<leader>m"] = { name = "+Markdown" },
-			["<leader><tab>"] = { name = "+Tab" },
-			["]"] = { name = "+Next" },
-			["["] = { name = "+Prev" },
-			["g"] = { name = "+Goto" },
-			["gs"] = { name = "+Surround" },
-			["<leader>gd"] = { name = "+Diff View" },
-		},
-	},
+	opts = {},
+	keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-		wk.register(opts.defaults)
+		wk.add({
+			mode = { "n", "v" },
+			{ "<leader>d", desc = "+Debug" },
+			{"<leader>da", desc = "+Adapters" },
+			{"<leader>r", desc = "+Replace" },
+			{"<leader>o", desc = "+Obsidian" },
+			{"<leader>u", desc = "+UI" },
+			{"<leader>c", desc = "+Code" },
+			{"<leader>f", desc = "+File/Find" },
+			{"<leader>b", desc = "+Buffer" },
+			{"<leader>g", desc = "+Git" },
+			{"<leader>gh", desc = "+Git Blame" },
+			{"<leader>gt", desc = "+Git toggle" },
+			{"<leader>q", desc = "+Quit/Session" },
+			{"<leader>s", desc = "+Search" },
+			{"<leader>w", desc = "+Window" },
+			{"<leader>x", desc = "+Diagnostics/Quickfix" },
+			{"<leader>t", desc = "+Terminal" },
+			{"<leader>m", desc = "+Markdown" },
+			{"<leader><tab>", desc = "+Tab" },
+			{"[", desc = "+Next" },
+			{"]", desc = "+Prev" },
+			{"g", desc = "+Goto" },
+			{"gs", desc = "+Surround" },
+			{"<leader>gd", desc = "+Diff View" },
+		})
 	end,
 }
