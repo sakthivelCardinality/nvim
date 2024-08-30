@@ -155,6 +155,22 @@ return {
 		end,
 	},
 	-- {
+	-- 	"Wansmer/treesj",
+	-- 	cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>j",
+	-- 			function()
+	-- 				require("treesj").toggle()
+	-- 			end,
+	-- 			desc = "Toggle treesitter join",
+	-- 		},
+	-- 	},
+	-- 	opts = {
+	-- 		use_default_keymaps = false,
+	-- 	},
+	-- },
+	-- {
 	-- 	"windwp/nvim-autopairs",
 	-- 	enabled = false,
 	-- 	event = "InsertEnter",

@@ -31,7 +31,6 @@ return {
 			{"<leader>s", desc = "+Search" },
 			{"<leader>w", desc = "+Window" },
 			{"<leader>x", desc = "+Diagnostics/Quickfix" },
-			{"<leader>t", desc = "+Terminal" },
 			{"<leader>m", desc = "+Markdown" },
 			{"<leader><tab>", desc = "+Tab" },
 			{"[", desc = "+Next" },

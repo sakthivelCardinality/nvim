@@ -67,6 +67,11 @@ return {
 			},
 			filesystem_watchers = {
 				enable = true,
+				ignore_dirs = {
+					"node_modules",
+					"dist",
+					".angular",
+				},
 			},
 			actions = {
 				open_file = {
@@ -78,9 +83,7 @@ return {
 				},
 			},
 			renderer = {
-				root_folder_label = true,
 				highlight_git = true,
-				highlight_opened_files = "none",
 				group_empty = true,
 
 				indent_markers = {
