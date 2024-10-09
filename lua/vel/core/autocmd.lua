@@ -68,14 +68,13 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- wrap and check for spell in text filetypes
+-- make it easier to close man-files when opened inline
 vim.api.nvim_create_autocmd("FileType", {
-	group = utils.augroup("wrap_spell"),
-	pattern = { "gitcommit", "markdown" },
-	callback = function()
-		vim.opt_local.wrap = true
-		vim.opt_local.spell = true
-	end,
+  group = utils.augroup("man_unlisted"),
+  pattern = { "man" },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+  end,
 })
 
 -- Fix conceallevel for json files
@@ -83,7 +82,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = utils.augroup("json_conceal"),
 	pattern = { "json", "jsonc", "json5" },
 	callback = function()
-		vim.opt_local.conceallevel = 0
+		vim.opt.conceallevel = 0
 	end,
 })
 
@@ -99,11 +98,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- Enable spell checking for certain file types
+-- Enable spell checking and wrap for certain file types
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = utils.augroup("spell_check_file_pattern"),
-	pattern = { "*.txt", "*.md", "*.tex", "*.typ", "gitcommit", "markdown" },
+	pattern = { "*.txt", "*.md", "*.tex", "*.typ", "gitcommit", "markdown", "text", "plaintex", "typst" },
 	callback = function()
+	  vim.opt.wrap = true
 		vim.opt.spell = true
 	end,
 })
