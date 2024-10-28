@@ -6,7 +6,7 @@ return {
 		keys = {
 			{
 				"<leader>gg",
-				"<cmd>Git<cr>",
+				"<cmd>vert Git<cr>",
 				desc = "Git Toggle",
 				mode = { "n" },
 			},

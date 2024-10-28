@@ -2,6 +2,24 @@ return {
 	{ "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
 	{ "echasnovski/mini.cursorword", event = "VeryLazy", opts = {} },
 	{
+		"echasnovski/mini.files",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>e",
+				function()
+					require("mini.files").open()
+				end,
+				desc = "Open file explorer",
+			},
+		},
+		opts = {
+		  windows = {
+        preview = true,
+		  }
+		},
+	},
+	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
 		opts = {
