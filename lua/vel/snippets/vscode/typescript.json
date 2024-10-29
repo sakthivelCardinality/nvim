@@ -2,34 +2,34 @@
   "print_log": {
     "prefix": "cl",
     "body": [
-      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { $1 });$0"
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { $1 });"
     ],
     "description": "print console log"
   },
   "print_clipboard_log": {
     "prefix": "clc",
     "body": [
-      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });$0"
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });"
     ],
     "description": "print console clipboard log"
   },
   "ts_map": {
     "prefix": "map",
     "body": [
-      "${1:array}.map((${2:element}:${3:any},index:number)=>{",
+      "${1:array}.map((${2:element}:${3:any},index:number) => {",
       "$0",
       "return ${2:element}; });"
     ],
     "description": "ts_map"
   },
-  "ts_filter": {
-    "prefix": "filter",
+  "ts_filter_return": {
+    "prefix": "filter_return",
     "body": [
-      "${1:array}.filter((${2:element}:${3:any},index:number)=>{",
+      "${1:array}.filter((${2:element}:${3:any},index:number) => {",
       "$0",
       "return ${2:element}; });"
     ],
-    "description": "ts_filter"
+    "description": "ts_filter_return"
   },
   "ts_reduce": {
     "prefix": "reduce",
@@ -39,5 +39,20 @@
       "}, ${4:initial});"
     ],
     "description": "ts_reduce"
+  },
+  "ts_reduce_promise": {
+    "prefix": "reduce_promise",
+    "body": [
+      "await ${1:iterable}.reduce(async(previousPromise:any, ${2:element}) => {",
+      "await previousPromise;",
+      "$0",
+      "}, Promise.resolve());"
+    ],
+    "description": "ts_reduce_return"
+  },
+  "ts_filter": {
+    "prefix": "filter",
+    "body": ["${1:array}.filter((${2:e}) => $0 );"],
+    "description": "ts_filter"
   }
 }

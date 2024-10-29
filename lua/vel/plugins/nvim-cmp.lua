@@ -22,10 +22,13 @@ return {
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+		local auto_select = true
+		local defaults = require("cmp.config.default")()
 		cmp.setup({
 			completion = {
-				completeopt = "menu,menuone,preview,noselect",
+				completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
 			},
+			preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
 			snippet = { -- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
@@ -82,6 +85,7 @@ return {
 			experimental = {
 				ghost_text = true,
 			},
+			sorting = defaults.sorting,
 		})
 
 		-- If you want insert `(` after select function or method item
