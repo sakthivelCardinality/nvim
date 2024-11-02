@@ -38,8 +38,8 @@ keymap.set("v", "x", '"_x', { silent = true })
 keymap.set("v", "X", '"_X', { silent = true })
 
 -- Move to line beginning and end
--- keymap.set({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
--- keymap.set({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
+keymap.set({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
+keymap.set({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
 
 -- scroll at the center of screen
 keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })

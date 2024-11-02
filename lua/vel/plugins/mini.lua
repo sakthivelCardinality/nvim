@@ -2,24 +2,6 @@ return {
 	{ "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
 	{ "echasnovski/mini.cursorword", event = "VeryLazy", opts = {} },
 	{
-		"echasnovski/mini.files",
-		event = "VeryLazy",
-		keys = {
-			{
-				"<leader>e",
-				function()
-					require("mini.files").open()
-				end,
-				desc = "Open file explorer",
-			},
-		},
-		opts = {
-		  windows = {
-        preview = true,
-		  }
-		},
-	},
-	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
 		opts = {
@@ -167,6 +149,63 @@ return {
 					require("mini.bufremove").delete(0, true)
 				end,
 				desc = "Delete Buffer (Force)",
+			},
+		},
+	},
+	{
+		"echasnovski/mini.files",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>e",
+				function()
+					require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+				end,
+				desc = "Open mini.files (Directory of Current File)",
+			},
+			{
+				"<leader>E",
+				function()
+					require("mini.files").open(vim.uv.cwd(), true)
+				end,
+				desc = "Open mini.files (cwd)",
+			},
+		},
+		opts = {
+			options = {
+				-- Whether to use for editing directories
+				-- Disabled by default in LazyVim because neo-tree is used for that
+				use_as_default_explorer = true,
+				-- If set to false, files are moved to the trash directory
+				-- To get this dir run :echo stdpath('data')
+				-- ~/.local/share/neobean/mini.files/trash
+				permanent_delete = false,
+			},
+			windows = {
+				preview = true,
+				width_focus = 30,
+				width_preview = 50,
+			},
+			mappings = {
+				close = "q",
+				-- Use this if you want to open several files
+				go_in = "l",
+				-- This opens the file, but quits out of mini.files (default L)
+				go_in_plus = "<CR>",
+				-- I swapped the following 2 (default go_out: h)
+				-- go_out_plus: when you go out, it shows you only 1 item to the right
+				-- go_out: shows you all the items to the right
+				go_out = "H",
+				go_out_plus = "h",
+				-- Default <BS>
+				reset = ",",
+				-- Default @
+				reveal_cwd = ".",
+				show_help = "g?",
+				-- Default =
+				synchronize = "s",
+				trim_left = "<",
+				trim_right = ">",
 			},
 		},
 	},

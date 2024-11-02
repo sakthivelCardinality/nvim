@@ -11,8 +11,8 @@ opt.relativenumber = true -- Relative line numbers
 opt.mouse = "a" -- Enable mouse mode
 
 -- clipboard
--- opt.clipboard = "unnamedplus" -- Sync with system clipboard
-opt.clipboard = ""
+-- vim.schedule(function() opt.clipboard = 'unnamedplus' end) -- Sync with system clipboard
+opt.clipboard = "" -- not to sync with system clipboard
 
 -- cursor
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode

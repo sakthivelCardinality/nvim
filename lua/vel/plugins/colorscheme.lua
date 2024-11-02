@@ -51,7 +51,8 @@ return {
 			highlights = {
 				CursorLine = { bg = "none" },
 				CursorLineNr = { fg = "#fff000", bold = false },
-				Whitespace = { fg = '#303642' }
+				Whitespace = { fg = "#303642" },
+				LineNr = { fg = "#8400ff" },
 			},
 		},
 		config = function(_, opts)
