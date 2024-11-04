@@ -122,6 +122,7 @@ return {
 	},
 	{
 		"echasnovski/mini.bufremove",
+		enabled = false,
 		event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{

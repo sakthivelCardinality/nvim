@@ -57,38 +57,27 @@ return {
 			{ "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols Files" },
 			{ "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
 			{ "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
+			{
+				"<S-h>",
+				function()
+					require("telescope.builtin").buffers({
+						sort_mru = true,
+						sort_lastused = true,
+						initial_mode = "normal",
+					})
+				end,
+				desc = "Open telescope buffers",
+			},
 		},
 		opts = {
 			-- change the stype for the telescope find_files and git_files
-			pickers = {
-				find_files = {
-					previewer = true,
-					-- path_display = {
-					-- 	filename_first = {
-					-- 		reverse_directories = false,
-					-- 	},
-					-- },
-					path_display = function(_, path)
-						return require("vel.core.utils").change_path_display(path)
-					end,
+			defaults = require("telescope.themes").get_ivy({
+				path_display = function(_, path)
+					return require("vel.core.utils").change_path_display(path)
+				end,
+				layout_config = {
+					preview_width = 0.4,
 				},
-				git_files = {
-					previewer = true,
-					-- path_display = {
-					-- 	filename_first = {
-					-- 		reverse_directories = false,
-					-- 	},
-					-- },
-					path_display = function(_, path)
-						return require("vel.core.utils").change_path_display(path)
-					end,
-				},
-			},
-			defaults = {
-				layout_strategy = "horizontal",
-				layout_config = { prompt_position = "top" },
-				sorting_strategy = "ascending",
-				winblend = 0,
 				file_ignore_patterns = { ".git/", "node_modules/", "dist/", "target/", ".angular/", "src/assets" },
 				mappings = {
 					i = {
@@ -115,9 +104,15 @@ return {
 						["<M-p>"] = function(...)
 							require("telescope.actions.layout").toggle_preview(...)
 						end,
+						["d"] = function(...)
+							require("telescope.actions").delete_buffer(...)
+						end,
+						["q"] = function(...)
+							require("telescope.actions").close(...)
+						end,
 					},
 				},
-			},
+			}),
 			extensions = {
 				fzf = {
 					fuzzy = true, -- false will only do exact matching
