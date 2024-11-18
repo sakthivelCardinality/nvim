@@ -165,8 +165,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Function to get the full path and replace the home directory with ~
 local function get_winbar_path()
-  local full_path = vim.fn.expand("%:p")
-  return full_path:gsub(vim.fn.expand("$HOME"), "~")
+  -- local full_path = vim.fn.expand("%:p")
+  -- return full_path:gsub(vim.fn.expand("$HOME"), "~")
+  return "%t"
 end
 -- Function to get the number of open buffers using the :ls command
 local function get_buffer_count()

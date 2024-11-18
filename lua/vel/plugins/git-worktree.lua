@@ -1,5 +1,6 @@
 return {
 	"ThePrimeagen/git-worktree.nvim",
+	enabled = false,
 	event = "VeryLazy",
 	opts = {},
 	config = function()

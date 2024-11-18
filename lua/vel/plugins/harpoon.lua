@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	event = 'VeryLazy',
+	event = "VeryLazy",
 	branch = "harpoon2",
 	opts = {
 		menu = {
@@ -8,6 +8,7 @@ return {
 		},
 		settings = {
 			save_on_toggle = true,
+			sync_on_ui_close = true,
 		},
 	},
 	keys = function()
