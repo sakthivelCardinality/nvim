@@ -167,7 +167,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 local function get_winbar_path()
   -- local full_path = vim.fn.expand("%:p")
   -- return full_path:gsub(vim.fn.expand("$HOME"), "~")
-  return "%t"
+  return "%f"
 end
 -- Function to get the number of open buffers using the :ls command
 local function get_buffer_count()
