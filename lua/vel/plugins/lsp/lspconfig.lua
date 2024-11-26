@@ -82,7 +82,7 @@ return {
 			keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
 
 			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>cR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+			keymap.set("n", "<leader>cL", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
 		local util = require("lspconfig.util")

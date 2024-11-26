@@ -1,6 +1,6 @@
 return {
-	{ "echasnovski/mini.statusline", event = "VeryLazy", opts = {} },
-	{ "echasnovski/mini.cursorword", event = "VeryLazy", opts = {} },
+	{ "echasnovski/mini.statusline", event = "VeryLazy", enabled = true, opts = {} },
+	{ "echasnovski/mini.cursorword", event = "VeryLazy", enabled = false, opts = {} },
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
@@ -98,6 +98,11 @@ return {
 					"mason",
 					"toggleterm",
 					"NvimTree",
+					"fzf",
+					"notify",
+					"snacks_notif",
+					"snacks_terminal",
+					"snacks_win",
 				},
 				callback = function()
 					vim.b.miniindentscope_disable = true
@@ -122,7 +127,7 @@ return {
 	},
 	{
 		"echasnovski/mini.bufremove",
-		enabled = true,
+		enabled = false,
 		event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{
