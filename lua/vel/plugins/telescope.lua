@@ -5,9 +5,9 @@ return {
 		branch = "0.1.x",
 		cmd = "Telescope",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
+				event = "VeryLazy",
 				build = "make",
 				config = function()
 					require("telescope").load_extension("fzf")

@@ -92,7 +92,7 @@ return {
 						return "]c"
 					end
 					vim.schedule(function()
-						gs.next_hunk()
+						gs.nav_hunk("next")
 					end)
 					return "<Ignore>"
 				end, "Goto Next Git Hunk")
@@ -102,7 +102,7 @@ return {
 						return "[c"
 					end
 					vim.schedule(function()
-						gs.prev_hunk()
+						gs.nav_hunk("prev")
 					end)
 					return "<Ignore>"
 				end, "Goto Previous Git Hunk")

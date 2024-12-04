@@ -82,7 +82,7 @@ return {
 	},
 	{
 		"echasnovski/mini.indentscope",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile", "VeryLazy" },
 		opts = {
 			symbol = "│",
 			options = {
@@ -100,6 +100,7 @@ return {
 					"NvimTree",
 					"fzf",
 					"notify",
+					"snacks_dashboard",
 					"snacks_notif",
 					"snacks_terminal",
 					"snacks_win",
