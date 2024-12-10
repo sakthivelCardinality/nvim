@@ -25,6 +25,7 @@ return {
 			--   ╚═══╝  ╚══════╝╚══════╝]]
 			-- 			}
 		},
+		indent = { enabled = true },
 	},
 	keys = {
 		{
@@ -71,6 +72,13 @@ return {
 			desc = "Prev Reference",
 			mode = { "n", "t" },
 		},
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
+		},
 	},
 	init = function()
 		local utils = require("vel.core.utils")
@@ -113,6 +121,8 @@ return {
 					:map("<leader>uc")
 				Snacks.toggle.treesitter():map("<leader>uT")
 				Snacks.toggle.inlay_hints():map("<leader>uh")
+				Snacks.toggle.indent():map("<leader>ug")
+				Snacks.toggle.dim():map("<leader>uD")
 			end,
 		})
 	end,

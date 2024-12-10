@@ -63,6 +63,7 @@ return {
 	},
 	{
 		"echasnovski/mini.hipatterns",
+		enabled = false,
 		event = "VeryLazy",
 		config = function()
 			local hipatterns = require("mini.hipatterns")
@@ -82,6 +83,7 @@ return {
 	},
 	{
 		"echasnovski/mini.indentscope",
+		enabled = false,
 		event = { "BufReadPre", "BufNewFile", "VeryLazy" },
 		opts = {
 			symbol = "│",
@@ -113,6 +115,7 @@ return {
 	},
 	{
 		"echasnovski/mini.surround",
+		enabled = false,
 		event = "VeryLazy",
 		opts = {
 			mappings = {
