@@ -26,6 +26,7 @@ return {
 			-- 			}
 		},
 		indent = { enabled = true },
+		scope = { enabled = true },
 	},
 	keys = {
 		{

@@ -13,6 +13,14 @@
     ],
     "description": "print console clipboard log"
   },
+  "print_dir": {
+    "prefix": "cdir",
+    "body": [
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} : ${1}`);",
+      "console.dir(${1}, { depth : null});"
+    ],
+    "description": "print console dir"
+  },
   "ts_map": {
     "prefix": "map",
     "body": [

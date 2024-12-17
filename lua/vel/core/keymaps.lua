@@ -164,6 +164,3 @@ keymap.set("n", "<Leader><CR>", "o<Esc>", { desc = "Add blank line below in norm
 
 -- insert semicolon in the end
 keymap.set({ "n", "i" }, "<A-;>", "<Esc>miA;<Esc>`ii<ESC>", { desc = "Insert semicolon in the end" })
-
--- Toggle Relative number
--- keymap.set("n", "<leader>ur", "<cmd>set relativenumber!<cr>", { desc = "Toggle Relative Number" })
