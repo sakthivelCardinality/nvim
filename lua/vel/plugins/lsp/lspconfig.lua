@@ -108,6 +108,7 @@ return {
 			"sqlls",
 			-- "graphql",
 			"emmet_ls",
+			"gopls"
 		}
 
 		for _, lsp in ipairs(servers) do

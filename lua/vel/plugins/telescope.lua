@@ -77,7 +77,7 @@ return {
 				layout_config = {
 					preview_width = 0.4,
 				},
-				file_ignore_patterns = { ".git/", "node_modules/", "dist/", "target/", ".angular/", "src/assets" },
+				file_ignore_patterns = { ".git/", "node_modules/", "dist/", "target/", ".angular/", "src/assets", "package%-lock.json"},
 				mappings = {
 					i = {
 						["<esc>"] = function(...)

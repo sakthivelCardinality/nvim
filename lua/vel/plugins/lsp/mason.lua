@@ -49,7 +49,8 @@ return {
 				"yamlls",
 				"zls",
 				"jdtls",
-				'denols'
+				"denols",
+				"gopls"
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = false, -- not the same as ensure_installed

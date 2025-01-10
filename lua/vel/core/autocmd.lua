@@ -197,5 +197,6 @@ local function update_winbar()
 end
 -- Autocmd to update the winbar on BufEnter and WinEnter events
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+	group = utils.augroup("ShowWinBar"),
   callback = update_winbar,
 })
