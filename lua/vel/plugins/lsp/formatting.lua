@@ -56,7 +56,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				java = { "google-java-format" },
-				go = { "gofmt"}
+				go = { "goimports", "gofumpt" },
 			},
 			format_on_save = function()
 				if vim.g.conform_autoformat == false then

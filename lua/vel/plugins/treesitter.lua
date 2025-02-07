@@ -34,9 +34,13 @@ return {
 				"query",
 				"zig",
 				"cpp",
-				"go",
 				"python",
 				"java",
+				"regex",
+				"go",
+				"gomod",
+				"gowork",
+				"gosum",
 			},
 			-- enable highlight
 			highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" } },
@@ -124,6 +128,12 @@ return {
 					return true
 				end, opts.ensure_installed)
 			end
+			vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+				pattern = { "*.component.html", "*.container.html" },
+				callback = function()
+					vim.treesitter.start(nil, "angular")
+				end,
+			})
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
