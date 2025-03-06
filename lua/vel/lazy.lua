@@ -16,6 +16,7 @@ require("lazy").setup({ { import = "vel.plugins" }, { import = "vel.plugins.lsp"
 		lazy = false,
 		version = false,
 	},
+	install = { colorscheme = { "onedark_dark" } },
 	checker = {
 		enabled = true,
 		notify = false,

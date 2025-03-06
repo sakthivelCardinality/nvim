@@ -43,6 +43,7 @@ opt.laststatus = 3 -- global statusline
 
 -- tabstop, indent
 opt.tabstop = 2 -- Number of spaces tabs count for
+opt.softtabstop = 2
 opt.smartindent = true -- Insert indents automatically
 opt.copyindent = true -- Copy the previous indentation on autoindenting.
 
