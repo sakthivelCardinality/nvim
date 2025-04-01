@@ -5,7 +5,7 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
-		words = { enabled = false },
+		words = { enabled = true },
 		statuscolumn = {
 			enabled = true,
 		},
@@ -25,8 +25,8 @@ return {
   ╚═══╝  ╚══════╝╚══════╝]]
 						}
 		},
-		indent = { enabled = false },
-		scope = { enabled = false },
+		indent = { enabled = true },
+		scope = { enabled = true },
 		explorer = { enabled = true },
 	},
 	keys = {
@@ -36,13 +36,6 @@ return {
 				Snacks.notifier.hide()
 			end,
 			desc = "Dismiss All Notifications",
-		},
-		{
-			"<leader>bd",
-			function()
-				Snacks.bufdelete()
-			end,
-			desc = "Delete Buffer",
 		},
 		{
 			"<leader>gl",

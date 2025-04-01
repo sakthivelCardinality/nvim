@@ -38,8 +38,8 @@ keymap.set("v", "x", '"_x', { silent = true })
 keymap.set("v", "X", '"_X', { silent = true })
 
 -- Move to line beginning and end
-keymap.set({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
-keymap.set({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
+keymap.set({ "n", "v", "x" }, "gl", "$", { desc = "End of line" })
+keymap.set({ "n", "v", "x" }, "gh", "^", { desc = "Beginning of line" })
 
 -- scroll at the center of screen
 keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })
@@ -136,6 +136,13 @@ keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab
 -- buffers
 keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 keymap.set("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+keymap.set("n", "<leader>bd", function()
+	Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bo", function()
+	Snacks.bufdelete.other()
+end, { desc = "Delete Other Buffers" })
+keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Add undo break-points
 keymap.set("i", ",", ",<c-g>u")
