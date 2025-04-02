@@ -7,20 +7,20 @@
           "javascript",
           "javacriptreact"
         ],
-        "path": "./javascript.json"
+        "path": "./vscode/javascript.json"
       },
       {
         "language": [
           "typescript",
           "typescriptreact"
         ],
-        "path": "./typescript.json"
+        "path": "./vscode/typescript.json"
       },
       {
         "language": [
           "rust"
         ],
-        "path": "./rust.json"
+        "path": "./vscode/rust.json"
       }
     ]
   }

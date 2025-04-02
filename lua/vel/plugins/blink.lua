@@ -4,7 +4,7 @@ return {
 	event = "InsertEnter",
 
 	-- optional: provides snippets for the snippet source
-	dependencies = { "L3MON4D3/LuaSnip", "moyiz/blink-emoji.nvim" },
+	dependencies = { "moyiz/blink-emoji.nvim", "rafamadriz/friendly-snippets" },
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -42,11 +42,15 @@ return {
 		},
 
 		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = true }, ghost_text = { enabled = true } },
+		completion = {
+			documentation = { auto_show = true },
+			ghost_text = { enabled = true },
+			accept = { auto_brackets = { enabled = true } },
+		},
 
 		signature = { enabled = true },
 
-		snippets = { preset = "luasnip" },
+		-- snippets = { preset = "luasnip" },
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
