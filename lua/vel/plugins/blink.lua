@@ -45,17 +45,18 @@ return {
 		completion = {
 			documentation = { auto_show = true },
 			ghost_text = { enabled = true },
-			accept = { auto_brackets = { enabled = true } },
 		},
 
 		signature = { enabled = true },
+
+		cmdline = { enabled = true },
 
 		-- snippets = { preset = "luasnip" },
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "snippets", "path", "buffer", "emoji" },
+			default = { "lsp", "path", "snippets", "buffer", "emoji" },
 			providers = {
 				emoji = {
 					module = "blink-emoji",

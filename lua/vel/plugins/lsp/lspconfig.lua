@@ -200,11 +200,11 @@ return {
 			},
 		})
 
-		lspconfig["denols"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			root_dir = util.root_pattern("deno.json", "deno.jsonc"),
-		})
+		-- lspconfig["denols"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+		-- })
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
