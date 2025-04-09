@@ -164,6 +164,7 @@ return {
 	},
 	{
 		"echasnovski/mini.files",
+		enabled = false,
 		event = "VeryLazy",
 		keys = {
 			{

@@ -1,7 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	event = "VeryLazy",
-	enabled = false,
+	enabled = true,
 	version = "*",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
@@ -134,17 +134,17 @@ return {
 		local utils = require("vel.core.utils")
 
 		-- Float window resize
-		local tree_api = require("nvim-tree")
-		local tree_view = require("nvim-tree.view")
-		vim.api.nvim_create_autocmd({ "VimResized" }, {
-			group = utils.augroup("NvimTreeResize"),
-			callback = function()
-				if tree_view.is_visible() then
-					tree_view.close()
-					tree_api.open()
-				end
-			end,
-		})
+		-- local tree_api = require("nvim-tree")
+		-- local tree_view = require("nvim-tree.view")
+		-- vim.api.nvim_create_autocmd({ "VimResized" }, {
+		-- 	group = utils.augroup("NvimTreeResize"),
+		-- 	callback = function()
+		-- 		if tree_view.is_visible() then
+		-- 			tree_view.close()
+		-- 			tree_api.open()
+		-- 		end
+		-- 	end,
+		-- })
 
 		-- Go to last used hidden buffer when deleting a buffer
 		vim.api.nvim_create_autocmd("BufEnter", {
@@ -171,7 +171,7 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file in explorer" }) -- toggle file explorer
+		keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file in explorer" }) -- toggle file explorer
 		-- keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
 		-- keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
 		-- keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
