@@ -36,7 +36,6 @@ return {
 			{"[", desc = "+Next" },
 			{"]", desc = "+Prev" },
 			{"g", desc = "+Goto" },
-			{"gs", desc = "+Surround" },
 			{"<leader>gd", desc = "+Diff View" },
 		})
 	end,

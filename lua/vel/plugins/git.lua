@@ -119,9 +119,10 @@ return {
 				map("n", "<leader>ghs", gs.stage_hunk, "git stage hunk")
 				map("n", "<leader>ghr", gs.reset_hunk, "git reset hunk")
 				map("n", "<leader>ghS", gs.stage_buffer, "git Stage Buffer")
-				map("n", "<leader>ghu", gs.undo_stage_hunk, "git Undo Stage Hunk")
+				-- map("n", "<leader>ghu", gs.undo_stage_hunk, "git Undo Stage Hunk")
 				map("n", "<leader>ghR", gs.reset_buffer, "git Reset Buffer")
 				map("n", "<leader>ghp", gs.preview_hunk, "git Preview Hunk")
+				map("n", "<leader>ghi", gs.preview_hunk_inline, "git Preview Inline Hunk")
 				map("n", "<leader>ghb", function()
 					gs.blame_line({ full = true })
 				end, "git Blame Line")
@@ -130,9 +131,14 @@ return {
 					gs.diffthis("~")
 				end, "git Diff This ~")
 
+				-- Quickfix list
+				map("n", "<leader>ghq", gs.setqflist, "git Quickfix List")
+				map("n", "<leader>ghQ", function() gs.setqflist('all') end, "git Quickfix List All")
+
 				-- Toggle Git Ui
 				map("n", "<leader>gtb", gs.toggle_current_line_blame, "Toggle Git Line Blame")
 				map("n", "<leader>gtd", gs.toggle_deleted, "Toggle Git Delete")
+				map("n", "<leader>gtw", gs.toggle_word_diff, "Toggle Git Word Diff")
 
 				-- Text Object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
