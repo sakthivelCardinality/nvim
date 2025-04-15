@@ -92,18 +92,18 @@ return {
 							require("telescope.actions").close(...)
 						end,
 						["<C-k>"] = function(...)
-							require("telescope.actions").move_selection_previous(...) -- move to prev result
+							require("telescope.actions").preview_scrolling_up(...)
 						end,
 						["<C-j>"] = function(...)
-							require("telescope.actions").move_selection_next(...) -- move to next result
+							require("telescope.actions").preview_scrolling_down(...)
 						end,
 						["<M-p>"] = function(...)
 							require("telescope.actions.layout").toggle_preview(...)
 						end,
-						["<C-Down>"] = function(...)
+						["<M-j>"] = function(...)
 							require("telescope.actions").cycle_history_next(...)
 						end,
-						["<C-Up>"] = function(...)
+						["<M-k>"] = function(...)
 							require("telescope.actions").cycle_history_prev(...)
 						end,
 					},

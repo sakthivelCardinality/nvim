@@ -30,7 +30,7 @@ return {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "default",
-			["<CR>"] = { "select_and_accept", "fallback" },
+			-- ["<CR>"] = { "select_and_accept", "fallback" },
 			["<C-k>"] = { "scroll_documentation_up", "fallback" },
 			["<C-j>"] = { "scroll_documentation_down", "fallback" },
 		},
