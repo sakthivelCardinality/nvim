@@ -71,6 +71,7 @@ return {
 				"eslint_d", -- js linter
 				"goimports",
 				"gofumpt",
+				"golangci-lint",
 			},
 		})
 	end,

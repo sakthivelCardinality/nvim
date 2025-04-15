@@ -2,16 +2,9 @@
   "print_log": {
     "prefix": "cl",
     "body": [
-      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, $1 );"
-    ],
-    "description": "print console log"
-  },
-  "print_log_json": {
-    "prefix": "cj",
-    "body": [
       "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { $1 });"
     ],
-    "description": "print console log json"
+    "description": "print console log"
   },
   "print_clipboard_log": {
     "prefix": "clc",
