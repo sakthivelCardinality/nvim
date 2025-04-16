@@ -137,33 +137,30 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter-context",
-	-- 	event = { "BufReadPre", "BufNewFile" },
-	-- 	opts = { max_lines = 3 },
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>ut",
-	-- 			function()
-	-- 				local tsc = require("treesitter-context")
-	-- 				tsc.toggle()
-	-- 			end,
-	-- 			desc = "Toggle Treesitter Context",
-	-- 		},
-	-- 	},
-	-- },
 	{
-		"windwp/nvim-ts-autotag",
+		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("nvim-ts-autotag").setup({
-				opts = {
-					-- Defaults
-					enable_close_on_slash = true,
-				},
-			})
-		end,
+		opts = { max_lines = 0 },
+		keys = {
+			{
+				"<leader>ut",
+				"<cmd>TSContextToggle<cr>",
+				desc = "Toggle Treesitter Context",
+			},
+		},
 	},
+	-- {
+	-- 	"windwp/nvim-ts-autotag",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("nvim-ts-autotag").setup({
+	-- 			opts = {
+	-- 				-- Defaults
+	-- 				enable_close_on_slash = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	-- {
 	-- 	"Wansmer/treesj",
 	-- 	cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
