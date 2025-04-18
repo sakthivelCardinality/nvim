@@ -2,7 +2,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VeryLazy",
-		branch = "0.1.x",
 		cmd = "Telescope",
 		dependencies = {
 			{
@@ -71,9 +70,11 @@ return {
 		opts = {
 			-- change the stype for the telescope find_files and git_files
 			defaults = require("telescope.themes").get_ivy({
-				path_display = function(_, path)
-					return require("vel.core.utils").change_path_display(path)
-				end,
+				path_display = {
+					filename_first = {
+						reverse_directories = true,
+					},
+				},
 				layout_config = {
 					preview_width = 0.4,
 				},
