@@ -1,6 +1,7 @@
 return {
 	{ "echasnovski/mini.statusline", event = "VeryLazy", enabled = true, opts = {} },
 	{ "echasnovski/mini.cursorword", event = "VeryLazy", enabled = false, opts = {} },
+	{ "echasnovski/mini.icons", event = "VeryLazy", opts = {} },
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
