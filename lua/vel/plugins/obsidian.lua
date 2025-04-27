@@ -8,13 +8,19 @@ return {
 	},
 	keys = {
 		{
+			"<leader>oo",
+			"<cmd>ObsidianNew weekly.md<cr>",
+			desc = "Open weekly notes",
+			mode = { "n" },
+		},
+		{
 			"<leader>on",
 			"<cmd>ObsidianNew<cr>",
 			desc = "Create New Obsidian Note",
 			mode = { "n" },
 		},
 		{
-			"<leader>oo",
+			"<leader>ot",
 			"<cmd>ObsidianToday<cr>",
 			desc = "Open Today Obsidian Note",
 			mode = { "n" },
@@ -50,7 +56,7 @@ return {
 			mode = { "n" },
 		},
 		{
-			"<leader>ot",
+			"<leader>oT",
 			"<cmd>ObsidianTemplate<cr>",
 			desc = "Switch Obsidian Template",
 			mode = { "n" },
@@ -93,6 +99,13 @@ return {
 					return require("obsidian").util.toggle_checkbox()
 				end,
 				opts = { buffer = true, desc = "Toggle CheckBoxes" },
+			},
+			-- Smart action depending on context, either follow link or toggle checkbox.
+			["<cr>"] = {
+				action = function()
+					return require("obsidian").util.smart_action()
+				end,
+				opts = { buffer = true, expr = true },
 			},
 		},
 
