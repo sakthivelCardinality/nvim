@@ -80,7 +80,7 @@ return {
 			current_line_blame = true,
 			attach_to_untracked = true,
 			on_attach = function(buffer)
-        local gs = require('gitsigns')
+				local gs = require("gitsigns")
 
 				local function map(mode, l, r, desc)
 					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
@@ -133,7 +133,9 @@ return {
 
 				-- Quickfix list
 				map("n", "<leader>ghq", gs.setqflist, "git Quickfix List")
-				map("n", "<leader>ghQ", function() gs.setqflist('all') end, "git Quickfix List All")
+				map("n", "<leader>ghQ", function()
+					gs.setqflist("all")
+				end, "git Quickfix List All")
 
 				-- Toggle Git Ui
 				map("n", "<leader>gtb", gs.toggle_current_line_blame, "Toggle Git Line Blame")

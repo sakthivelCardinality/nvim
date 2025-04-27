@@ -3,7 +3,9 @@ return {
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 		opts = {
-			options = {},
+			options = {
+			  transparency = false
+			},
 			styles = {
 				types = "NONE",
 				methods = "italic",
