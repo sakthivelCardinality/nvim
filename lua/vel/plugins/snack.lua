@@ -27,7 +27,7 @@ return {
 		},
 		indent = { enabled = true },
 		scope = { enabled = true },
-		explorer = { enabled = false },
+		explorer = { enabled = true },
 	},
 	keys = {
 		{
@@ -74,16 +74,16 @@ return {
 			end,
 			desc = "Toggle Zen Mode",
 		},
-		-- {
-		-- 	"<leader>fe",
-		-- 	function()
-		-- 		Snacks.explorer({
-		-- 			auto_close = true,
-		-- 			layout = { layout = { position = "right" } },
-		-- 		})
-		-- 	end,
-		-- 	desc = "File Explorer",
-		-- },
+		{
+			"<leader>E",
+			function()
+				Snacks.explorer({
+					auto_close = true,
+					layout = { layout = { position = "right" } },
+				})
+			end,
+			desc = "File Explorer",
+		},
 	},
 	init = function()
 		local utils = require("vel.core.utils")

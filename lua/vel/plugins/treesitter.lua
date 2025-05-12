@@ -140,7 +140,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPre", "BufNewFile" },
-		opts = { max_lines = 0 },
+		opts = { max_lines = 5 },
 		keys = {
 			{
 				"<leader>ut",
@@ -149,52 +149,4 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"windwp/nvim-ts-autotag",
-	-- 	event = { "BufReadPre", "BufNewFile" },
-	-- 	config = function()
-	-- 		require("nvim-ts-autotag").setup({
-	-- 			opts = {
-	-- 				-- Defaults
-	-- 				enable_close_on_slash = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"Wansmer/treesj",
-	-- 	cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>j",
-	-- 			function()
-	-- 				require("treesj").toggle()
-	-- 			end,
-	-- 			desc = "Toggle treesitter join",
-	-- 		},
-	-- 	},
-	-- 	opts = {
-	-- 		use_default_keymaps = false,
-	-- 	},
-	-- },
-	-- {
-	-- 	"windwp/nvim-autopairs",
-	-- 	enabled = false,
-	-- 	event = "InsertEnter",
-	-- 	opts = {
-	-- 		check_ts = true,
-	-- 		ts_config = {
-	-- 			lua = { "string" }, -- it will not add a pair on that treesitter node
-	-- 			javascript = { "template_string" },
-	-- 			java = false, -- don't check treesitter on java
-	-- 		},
-	-- 	},
-	-- },
-	-- {
-	-- 	"hiphish/rainbow-delimiters.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("rainbow-delimiters.setup").setup({})
-	-- 	end,
-	-- },
 }

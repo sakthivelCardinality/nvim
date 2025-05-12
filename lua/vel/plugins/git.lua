@@ -19,61 +19,6 @@ return {
 		},
 	},
 	{
-		"NeogitOrg/neogit",
-		enabled = false,
-		evnet = "VeryLazy",
-		keys = {
-			{
-				"<leader>gg",
-				function()
-					local neogit = require("neogit")
-					neogit.open()
-				end,
-				desc = "Neogit toggle",
-				mode = { "n" },
-			},
-		},
-		config = true,
-	},
-	{
-		"sindrets/diffview.nvim",
-		enabled = false,
-		evnet = "VeryLazy",
-		keys = {
-			{
-				"<leader>gdo",
-				"<cmd>DiffviewOpen<cr>",
-				desc = "Open",
-				mode = { "n" },
-			},
-			{
-				"<leader>gdc",
-				"<cmd>DiffviewClose<cr>",
-				desc = "Close",
-				mode = { "n" },
-			},
-			{
-				"<leader>gdr",
-				"<cmd>DiffviewRefresh<cr>",
-				desc = "Refresh",
-				mode = { "n" },
-			},
-			{
-				"<leader>gdh",
-				"<cmd>DiffviewFileHistory %<cr>",
-				desc = "Current File History",
-				mode = { "n" },
-			},
-			{
-				"<leader>gdH",
-				"<cmd>DiffviewFileHistory<cr>",
-				desc = "File History",
-				mode = { "n" },
-			},
-		},
-		opts = {},
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
@@ -147,4 +92,31 @@ return {
 			end,
 		},
 	},
+	-- {
+	-- 	"ThePrimeagen/git-worktree.nvim",
+	-- 	enabled = false,
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("telescope").load_extension("git_worktree")
+	-- 	end,
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>gw",
+	-- 			function()
+	-- 				require("telescope").extensions.git_worktree.git_worktrees()
+	-- 			end,
+	-- 			desc = "show all branch in git-worktree",
+	-- 			mode = { "n" },
+	-- 		},
+	-- 		{
+	-- 			"<leader>gW",
+	-- 			function()
+	-- 				require("telescope").extensions.git_worktree.create_git_worktree()
+	-- 			end,
+	-- 			desc = "create new branch in git-worktree",
+	-- 			mode = { "n" },
+	-- 		},
+	-- 	},
+	-- },
 }
