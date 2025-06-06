@@ -172,34 +172,6 @@ return {
 		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 		-- })
 
-		-- configure typescript server with plugin
-		local function organize_imports()
-			local params = {
-				command = "_typescript.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-				title = "",
-			}
-			vim.lsp.buf.execute_command(params)
-		end
-
-		lspconfig["ts_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			root_dir = util.root_pattern(
-				"package.json",
-				"tsconfig.json",
-				"jsconfig.json",
-				"gulpfile.js",
-				"node_modules"
-			),
-			commands = {
-				OrganizeImports = {
-					organize_imports,
-					description = "Organize Imports",
-				},
-			},
-		})
-
 		-- lspconfig["denols"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
@@ -268,5 +240,52 @@ return {
 				},
 			},
 		})
+
+		-- typescript-tools config
+		local ts_tools = require("typescript-tools")
+		ts_tools.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				separate_diagnostic_server = true,
+				publish_diagnostic_on = "insert_leave",
+				expose_as_code_action = "all",
+				tsserver_plugins = {},
+				complete_function_calls = true,
+				include_completions_with_insert_text = true,
+				tsserver_file_preferences = {
+					includeInlayParameterNameHints = "all",
+					includeCompletionsForModuleExports = true,
+				},
+			},
+		})
+
+		-- configure typescript server with plugin
+		-- local function organize_imports()
+		-- 	local params = {
+		-- 		command = "_typescript.organizeImports",
+		-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+		-- 		title = "",
+		-- 	}
+		-- 	vim.lsp.buf.execute_command(params)
+		-- end
+		--
+		-- lspconfig["ts_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	root_dir = util.root_pattern(
+		-- 		"package.json",
+		-- 		"tsconfig.json",
+		-- 		"jsconfig.json",
+		-- 		"gulpfile.js",
+		-- 		"node_modules"
+		-- 	),
+		-- 	commands = {
+		-- 		OrganizeImports = {
+		-- 			organize_imports,
+		-- 			description = "Organize Imports",
+		-- 		},
+		-- 	},
+		-- })
 	end,
 }

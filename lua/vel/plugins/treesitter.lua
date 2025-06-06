@@ -98,15 +98,15 @@ return {
 						["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
 					},
 				},
-				swap = {
-					enable = true,
-					swap_next = {
-						["<leader>a"] = "@parameter.inner",
-					},
-					swap_previous = {
-						["<leader>A"] = "@parameter.inner",
-					},
-				},
+				-- swap = {
+				-- 	enable = true,
+				-- 	swap_next = {
+				-- 		["<leader>a"] = "@parameter.inner",
+				-- 	},
+				-- 	swap_previous = {
+				-- 		["<leader>A"] = "@parameter.inner",
+				-- 	},
+				-- },
 				move = {
 					enable = true,
 					goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
