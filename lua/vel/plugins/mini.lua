@@ -20,7 +20,7 @@ return {
 	{
 		"echasnovski/mini.ai",
 		event = "VeryLazy",
-		enabled = false,
+		enabled = true,
 		opts = function()
 			local ai = require("mini.ai")
 			return {

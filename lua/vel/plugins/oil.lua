@@ -16,7 +16,7 @@ return {
 	keys = {
 		{
 			"<leader>e",
-			"<cmd>Oil --float --preview <cr>",
+			"<cmd>Oil --float <cr>",
 			desc = "Open mini.files (Directory of Current File)",
 		},
 	},
