@@ -72,6 +72,7 @@ return {
 				"goimports",
 				"gofumpt",
 				"golangci-lint",
+				"luacheck",
 			},
 		})
 	end,

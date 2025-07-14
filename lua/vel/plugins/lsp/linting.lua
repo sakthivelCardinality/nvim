@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-lint",
-	enabled = false,
+	enabled = true,
 	events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 	config = function()
 		local lint = require("lint")
@@ -13,6 +13,7 @@ return {
 			svelte = { "eslint_d" },
 			python = { "pylint" },
 			go = { "golangci-lint" },
+			lua = { "luacheck" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
