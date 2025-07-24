@@ -25,7 +25,7 @@ return {
 				CursorLine = { bg = "none" },
 				CursorLineNr = { fg = "#fff000", bold = true },
 				Whitespace = { fg = "#303642" },
-				-- LineNr = { fg = "#8400ff" },
+				LineNr = { fg = "#8400ff" },
 			},
 		},
 		config = function(_, opts)

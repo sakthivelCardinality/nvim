@@ -73,6 +73,7 @@ return {
 				"gofumpt",
 				"golangci-lint",
 				"luacheck",
+				"cspell",
 			},
 		})
 	end,

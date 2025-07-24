@@ -1,0 +1,10 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useSplitting": true,
+  "allowCompoundWords": false,
+  "ignorePaths": ["node_modules", "dist", ".git", ".angular", "build"],
+  "words": [],
+  "ignoreWords": [],
+  "enableFiletypes": ["ts", "js", "tsx", "jsx", "py", "go", "lua"]
+}

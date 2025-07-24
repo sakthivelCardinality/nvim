@@ -168,8 +168,8 @@ keymap.set("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Lef
 })
 
 -- Insert mode move cursor
-keymap.set("i", "<C-h>", "<Left>", { desc = "Move Cursor Left Insert Mode" })
-keymap.set("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
+-- keymap.set("i", "<C-h>", "<Left>", { desc = "Move Cursor Left Insert Mode" })
+-- keymap.set("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
 -- keymap.set("i", "<C-j>", "<Down>", { desc = "Move Cursor Down Insert Mode" })
 -- keymap.set("i", "<C-k>", "<Up>", { desc = "Move Cursor Up Insert Mode" })
 
