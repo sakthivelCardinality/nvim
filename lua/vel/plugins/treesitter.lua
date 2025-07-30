@@ -151,9 +151,9 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		enabled = false,
+		enabled = true,
 		event = { "BufReadPre", "BufNewFile" },
-		opts = { max_lines = 5 },
+		opts = { max_lines = 2 },
 		keys = {
 			{
 				"<leader>ut",
