@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	enabled = false,
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		{ "folke/neodev.nvim", opts = {} },
@@ -154,7 +155,7 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			fieltypes = { "rust" },
+			filetypes = { "rust" },
 			root_dir = util.root_pattern("Cargo.toml"),
 			settings = {
 				["rust_analyzer"] = {

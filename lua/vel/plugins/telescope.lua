@@ -86,6 +86,7 @@ return {
 					".angular/",
 					"src/assets",
 					"package%-lock.json",
+					"%.spec%.",
 				},
 				mappings = {
 					i = {
