@@ -13,10 +13,6 @@ keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, sil
 keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- insert mode move between beginningand end of line
--- keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
--- keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
-
 -- Inprove pasting
 -- keymap.set({"x", "v"}, "p", '"_dp', { desc = "Preserve previous word when pasting", silent = true })
 keymap.set({ "x", "v" }, "p", '"_dP', { desc = "Preserve previous word when pasting", silent = true })
@@ -45,8 +41,6 @@ keymap.set({ "n", "v", "x" }, "gh", "^", { desc = "Beginning of line" })
 keymap.set("n", "J", "mzJ`z", { desc = "Set the cursor on same position" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down half page center page" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up half page center page" })
--- keymap.set("n", "n", "nzzzv", { desc = "Search word with half page" })
--- keymap.set("n", "N", "Nzzzv", { desc = "Search word with half page" })
 keymap.set("n", "*", "*zz", { desc = "Search word under cursor with half page" })
 
 -- Move to window using the <ctrl> hjkl keys
@@ -99,9 +93,6 @@ keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search
 
 -- save file
 keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
--- Delete word right
--- keymap.set({ "i"}, "<C-e>", "<C-o>dw", { desc = "Delete word right" })
 
 -- better indenting
 keymap.set("v", "<", "<gv")
@@ -160,9 +151,6 @@ keymap.set("n", "<leader>uI", function()
 	vim.api.nvim_input("I")
 end, { desc = "Inspect Tree" })
 
--- keymap.set("n", "<leader>y", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
--- keymap.set("n", "<C-a>", "ggVG", { desc = "Copy whole file" })
-
 keymap.set("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 	desc = "inline find replace",
 })
@@ -182,3 +170,5 @@ keymap.set("n", "<Leader><CR>", "o<Esc>", { desc = "Add blank line below in norm
 
 -- insert semicolon in the end
 keymap.set({ "n", "i" }, "<A-;>", "<Esc>miA;<Esc>`ii<ESC>", { desc = "Insert semicolon in the end" })
+-- insert colon in the end
+keymap.set({ "n", "i" }, "<A-,>", "<Esc>miA,<Esc>`ii<ESC>", { desc = "Insert colon in the end" })

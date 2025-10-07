@@ -10,7 +10,7 @@ local config = {
 	},
 	virtual_lines = false,
 	virtual_text = true,
-	update_in_insert = true,
+	update_in_insert = false,
 	underline = true,
 	severity_sort = true,
 	float = {
@@ -163,6 +163,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap("n", "[w", diagnostic_goto(true, "WARN"), opt("Go to previous warn")) -- jump to previous diagnostic in buffer
 
 		keymap("n", "]w", diagnostic_goto(false, "WARN"), opt("Go to next warn")) -- jump to next diagnostic in buffer
+
+		keymap("n", "[i", diagnostic_goto(true, "INFO"), opt("Go to previous info")) -- jump to previous diagnostic in buffer
+
+		keymap("n", "]i", diagnostic_goto(false, "INFO"), opt("Go to next info")) -- jump to next diagnostic in buffer
 
 		keymap("n", "K", vim.lsp.buf.hover, opt("Show documentation for what is under cursor")) -- show documentation for what is under cursor
 

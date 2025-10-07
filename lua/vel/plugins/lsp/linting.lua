@@ -14,6 +14,7 @@ return {
 			python = { "pylint", "cspell" },
 			go = { "golangci-lint", "cspell" },
 			lua = { "luacheck", "cspell" },
+			html = { "cspell" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
