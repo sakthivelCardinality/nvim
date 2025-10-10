@@ -9,7 +9,7 @@
   "print_clipboard_log": {
     "prefix": "clc",
     "body": [
-      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });"
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}': ${CLIPBOARD}$1 });"
     ],
     "description": "print console clipboard log"
   },

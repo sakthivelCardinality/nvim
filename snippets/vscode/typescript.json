@@ -9,7 +9,7 @@
   "print_clipboard_log": {
     "prefix": "clc",
     "body": [
-      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}' : ${CLIPBOARD}$1 });"
+      "console.log(`🚀 ~ file: ${TM_FILENAME} ~ line: ${TM_LINE_NUMBER} :`, { '${CLIPBOARD}': ${CLIPBOARD}$1 });"
     ],
     "description": "print console clipboard log"
   },
@@ -51,7 +51,7 @@
   "ts_reduce_promise": {
     "prefix": "reduce_promise",
     "body": [
-      "await ${1:iterable}.reduce(async(previousPromise:any, ${2:element}) => {",
+      "await ${1:iterable}.reduce(async(previousPromise, ${2:element}) => {",
       "await previousPromise;",
       "$0",
       "}, Promise.resolve());"

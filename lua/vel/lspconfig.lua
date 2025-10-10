@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		keymap("n", "<leader>cl", vim.cmd.LspInfo, opt("Show LSP Info"))
 
-		keymap("n", "<leader>cq", vim.cmd.LspRestart, opt("LSP Restart"))
+		keymap("n", "<leader>cL", vim.cmd.LspRestart, opt("LSP Restart"))
 
 		keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opt("Show LSP references")) -- show definition, references
 
@@ -140,7 +140,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opt("Show LSP definitions")) -- show lsp definitions
 
-		keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opt("Show LSP implementations")) -- show lsp implementations
+		keymap("n", "gI", "<cmd>Telescope lsp_implementations<CR>", opt("Show LSP implementations")) -- show lsp implementations
 
 		keymap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opt("Show LSP type definitions")) -- show lsp type definitions
 
@@ -150,7 +150,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		keymap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opt("Show buffer diagnostics")) -- show  diagnostics for file
 
-		keymap("n", "<leader>cd", vim.diagnostic.open_float, opt("Show line diagnostics")) -- show diagnostics for line
+		keymap("n", "<leader>cd", function()
+			vim.diagnostic.open_float(nil, { focusable = true })
+		end, opt("Show line diagnostics")) -- show diagnostics for line
 
 		keymap("n", "[d", diagnostic_goto(true), opt("Go to previous diagnostic")) -- jump to previous diagnostic in buffer
 
@@ -172,7 +174,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		keymap("n", "gK", vim.lsp.buf.signature_help, opt("Signature Help"))
 
-		keymap("n", "<Leader>cL", lsp.codelens.run, opt("Run CodeLens"))
+		keymap("n", "<Leader>cq", lsp.codelens.run, opt("Run CodeLens"))
 	end,
 })
 -- }}}
