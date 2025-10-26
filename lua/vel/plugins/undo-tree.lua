@@ -1,9 +1,13 @@
 return {
-	"jiaoshijie/undotree",
+	"mbbill/undotree",
 	event = "VeryLazy",
-	dependencies = "nvim-lua/plenary.nvim",
-	config = true,
 	keys = {
-		{ "<leader><F5>", "<cmd>lua require('undotree').toggle()<cr>", desc = "Open UndotreeToggle" },
+		{
+			"<leader><F5>",
+			function()
+				vim.cmd.UndotreeToggle()
+			end,
+			desc = "open UndotreeToggle",
+		},
 	},
 }

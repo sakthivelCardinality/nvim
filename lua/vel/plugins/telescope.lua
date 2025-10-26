@@ -67,71 +67,74 @@ return {
 				desc = "Open telescope buffers",
 			},
 		},
-		opts = {
-			-- change the stype for the telescope find_files and git_files
-			defaults = require("telescope.themes").get_ivy({
-				path_display = {
-					filename_first = {
-						reverse_directories = true,
+		opts = function()
+			local theme = require("telescope.themes")
+			return {
+				-- change the stype for the telescope find_files and git_files
+				defaults = theme.get_ivy({
+					path_display = {
+						filename_first = {
+							reverse_directories = true,
+						},
+					},
+					layout_config = {
+						preview_width = 0.4,
+					},
+					file_ignore_patterns = {
+						".git/",
+						"node_modules/",
+						"dist/",
+						"target/",
+						".angular/",
+						"src/assets",
+						"package%-lock.json",
+						"%.spec%.",
+					},
+					mappings = {
+						i = {
+							["<esc>"] = function(...)
+								require("telescope.actions").close(...)
+							end,
+							["<C-k>"] = function(...)
+								require("telescope.actions").preview_scrolling_up(...)
+							end,
+							["<C-j>"] = function(...)
+								require("telescope.actions").preview_scrolling_down(...)
+							end,
+							["<M-p>"] = function(...)
+								require("telescope.actions.layout").toggle_preview(...)
+							end,
+							["<M-j>"] = function(...)
+								require("telescope.actions").cycle_history_next(...)
+							end,
+							["<M-k>"] = function(...)
+								require("telescope.actions").cycle_history_prev(...)
+							end,
+						},
+						n = {
+							["<M-p>"] = function(...)
+								require("telescope.actions.layout").toggle_preview(...)
+							end,
+							["d"] = function(...)
+								require("telescope.actions").delete_buffer(...)
+							end,
+							["q"] = function(...)
+								require("telescope.actions").close(...)
+							end,
+						},
+					},
+				}),
+				extensions = {
+					fzf = {
+						fuzzy = true, -- false will only do exact matching
+						override_generic_sorter = true, -- override the generic sorter
+						override_file_sorter = true, -- override the file sorter
+						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+						-- the default case_mode is "smart_case"
 					},
 				},
-				layout_config = {
-					preview_width = 0.4,
-				},
-				file_ignore_patterns = {
-					".git/",
-					"node_modules/",
-					"dist/",
-					"target/",
-					".angular/",
-					"src/assets",
-					"package%-lock.json",
-					"%.spec%.",
-				},
-				mappings = {
-					i = {
-						["<esc>"] = function(...)
-							require("telescope.actions").close(...)
-						end,
-						["<C-k>"] = function(...)
-							require("telescope.actions").preview_scrolling_up(...)
-						end,
-						["<C-j>"] = function(...)
-							require("telescope.actions").preview_scrolling_down(...)
-						end,
-						["<M-p>"] = function(...)
-							require("telescope.actions.layout").toggle_preview(...)
-						end,
-						["<M-j>"] = function(...)
-							require("telescope.actions").cycle_history_next(...)
-						end,
-						["<M-k>"] = function(...)
-							require("telescope.actions").cycle_history_prev(...)
-						end,
-					},
-					n = {
-						["<M-p>"] = function(...)
-							require("telescope.actions.layout").toggle_preview(...)
-						end,
-						["d"] = function(...)
-							require("telescope.actions").delete_buffer(...)
-						end,
-						["q"] = function(...)
-							require("telescope.actions").close(...)
-						end,
-					},
-				},
-			}),
-			extensions = {
-				fzf = {
-					fuzzy = true, -- false will only do exact matching
-					override_generic_sorter = true, -- override the generic sorter
-					override_file_sorter = true, -- override the file sorter
-					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-					-- the default case_mode is "smart_case"
-				},
-			},
-		},
+			}
+		end,
 		config = function(_, opts)
 			require("telescope").setup(opts)
 			local utils = require("vel.core.utils")
