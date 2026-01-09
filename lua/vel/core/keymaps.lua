@@ -64,6 +64,10 @@ keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
+-- Insert mode move cursor
+keymap.set("i", "<A-h>", "<Left>", { desc = "Move Cursor Left Insert Mode" })
+keymap.set("i", "<A-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
+
 -- Clear search with <esc>
 keymap.set({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
@@ -155,12 +159,6 @@ end, { desc = "Inspect Tree" })
 keymap.set("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 	desc = "inline find replace",
 })
-
--- Insert mode move cursor
--- keymap.set("i", "<C-h>", "<Left>", { desc = "Move Cursor Left Insert Mode" })
--- keymap.set("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
--- keymap.set("i", "<C-j>", "<Down>", { desc = "Move Cursor Down Insert Mode" })
--- keymap.set("i", "<C-k>", "<Up>", { desc = "Move Cursor Up Insert Mode" })
 
 -- Quicker macro playback
 keymap.set("n", "Q", "@qj", { desc = "Macro for single line" })
