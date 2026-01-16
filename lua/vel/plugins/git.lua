@@ -94,10 +94,13 @@ return {
 	},
 	-- {
 	-- 	"ThePrimeagen/git-worktree.nvim",
-	-- 	enabled = false,
+	-- 	enabled = true,
 	-- 	event = "VeryLazy",
-	-- 	opts = {},
 	-- 	config = function()
+	-- 		local Worktree = require("git-worktree")
+	-- 		Worktree.setup({
+	-- 			change_directory_command = "cd",
+	-- 		})
 	-- 		require("telescope").load_extension("git_worktree")
 	-- 	end,
 	-- 	keys = {
@@ -106,7 +109,7 @@ return {
 	-- 			function()
 	-- 				require("telescope").extensions.git_worktree.git_worktrees()
 	-- 			end,
-	-- 			desc = "show all branch in git-worktree",
+	-- 			desc = "Git Worktrees",
 	-- 			mode = { "n" },
 	-- 		},
 	-- 		{
@@ -114,7 +117,7 @@ return {
 	-- 			function()
 	-- 				require("telescope").extensions.git_worktree.create_git_worktree()
 	-- 			end,
-	-- 			desc = "create new branch in git-worktree",
+	-- 			desc = "Create Git Worktree",
 	-- 			mode = { "n" },
 	-- 		},
 	-- 	},

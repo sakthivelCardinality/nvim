@@ -151,15 +151,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
--- Fix conceallevel for json files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	group = utils.augroup("json_conceal"),
-	pattern = { "json", "jsonc", "json5" },
-	callback = function()
-		vim.opt_local.conceallevel = 0
-	end,
-})
-
 -- Add timestamp as extension for backup files
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = utils.augroup("timestamp_backupext"),
