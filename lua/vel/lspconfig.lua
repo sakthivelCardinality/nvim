@@ -179,26 +179,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 -- }}}
 
--- Servers {{{
-vim.lsp.enable({
-	"gopls",
-	"lua_ls",
-	"html",
-	"cssls",
-	"bashls",
-	"sqlls",
-	"emmet_ls",
-	"ts_ls",
-	"angularls",
-	"zls",
-	"yamlls",
-	-- "denols",
-	"jsonls",
-	"dockerls",
-	"marksman",
-})
--- }}}
-
 -- Start, Stop, Restart, Log commands {{{
 vim.api.nvim_create_user_command("LspStart", function()
 	vim.cmd.e()
