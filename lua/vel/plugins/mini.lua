@@ -1,8 +1,8 @@
 return {
-	{ "echasnovski/mini.statusline", event = "VeryLazy", enabled = true, opts = {} },
-	{ "echasnovski/mini.icons", event = "VeryLazy", opts = {} },
+	{ "nvim-mini/mini.statusline", event = "VeryLazy", enabled = true, opts = {} },
+	{ "nvim-mini/mini.icons", event = "VeryLazy", opts = {} },
 	{
-		"echasnovski/mini.pairs",
+		"nvim-mini/mini.pairs",
 		event = "VeryLazy",
 		opts = {
 			modes = { insert = true, command = true, terminal = false },
@@ -18,7 +18,7 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.ai",
+		"nvim-mini/mini.ai",
 		event = "VeryLazy",
 		enabled = true,
 		opts = function()
