@@ -25,7 +25,7 @@ return {
   ╚═══╝  ╚══════╝╚══════╝]]
 						}
 		},
-		indent = { enabled = true },
+		indent = { enabled = false },
 		scope = { enabled = true },
 		explorer = { enabled = false },
 	},
